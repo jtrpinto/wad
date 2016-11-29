@@ -102,9 +102,6 @@ $categories = $stmt->fetchAll();
         <div class="wad-half-body-content">
           <div class="wad-body-content-title">Next Appointments</div>
             <ul>
-              <li><?php print_r($categories['description']); ?></li>
-            </ul>
-            <ul>
               <?php foreach ($categories as $category) { ?>
                 <li><?=$category['description'];?></li>
               <? };?>
