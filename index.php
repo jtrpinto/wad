@@ -3,6 +3,10 @@ $conn = new PDO('pgsql:host=dbm.fe.up.pt;port=5432;dbname=tweb1601','tweb1601','
 $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
 $conn->query("SET SCHEMA 'public'");
+
+$stmt = $conn->prepare('SELECT * FROM wad.appointments');
+$stmt->execute();
+$categories = $stmt->fetchAll();
 ?>
 
 <html>
@@ -97,6 +101,14 @@ $conn->query("SET SCHEMA 'public'");
       <div class="wad-half-body-division">
         <div class="wad-half-body-content">
           <div class="wad-body-content-title">Next Appointments</div>
+            <ul>
+              <li><?php print_r($categories['description']); ?></li>
+            </ul>
+            <ul>
+              <?php foreach ($categories as $category) { ?>
+                <li><?=$category['description'];?></li>
+              <? };?>
+            </ul>
           <div class="wad-body-content-box"></div>
         </div>
         <div class="wad-half-body-content">
