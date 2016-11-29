@@ -147,7 +147,6 @@ header > div, img {
 
 .wad-half-body-content{
   width:50%;
-  border-style: dashed;
 }
 
 .wad-half-body-content + .wad-half-body-content{
