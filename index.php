@@ -63,12 +63,13 @@ include('templates/body.php')
   <div class="wad-half-body-division">
     <div class="wad-half-body-content">
       <div class="wad-body-content-title">Next Appointments</div>
-      <ul>
-        <?php foreach ($categories as $category) { ?>
-          <li><?=$category['description'];?></li>
-          <? };?>
-        </ul>
-        <div class="wad-body-content-box"></div>
+        <div class="wad-body-content-box">
+          <ul>
+            <?php foreach ($categories as $category) { ?>
+              <li><?=$category['description'];?></li>
+            <? };?>
+          </ul>
+        </div>
       </div>
       <div class="wad-half-body-content">
         <div class="wad-body-content-title">Recent Exams</div>
