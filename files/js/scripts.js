@@ -14,6 +14,10 @@ function openPopUp(id){
   document.getElementById(id).style.visibility = 'visible';
 }
 
+function openNewPage(id){
+  document.getElementById(id).style.visibility = "visible";
+}
+
 function closePopUp(id){
   document.getElementById(id).style.visibility = 'hidden';
 }

@@ -1,4 +1,5 @@
 <html>
+<!---->
 <head>
   <title>WAD</title>
   <link rel="stylesheet" href="files/css/style.css"> <!-- CSS Stylesheet -->

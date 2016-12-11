@@ -8,7 +8,8 @@ html {
   background-position: fixed;
 }
 body {
-  max-width: 70em;
+  max-width: 90%;
+  max-height: 90%;
   margin: 0 auto;
   margin-top: 20px;
   font-family: 'Noto Sans', sans-serif;
@@ -78,6 +79,20 @@ header > div, img {
   float: left;
   text-align: left;
   margin-top:10px;
+}
+
+.white_content {
+  display: none;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  padding: 16px;
+  border: 16px solid orange;
+  background-color: white;
+  z-index: 1002;
+  overflow: auto;
 }
 
 .wad-body{
