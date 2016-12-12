@@ -6,11 +6,9 @@ include('templates/header.php');
 include('templates/body.php');
 ?>
 
-<div id ="wad-manageMyInfo-page" class="wad-manageMyInfo-content">
+<div id ="wad-manageMyInfo-page" class="wad-body-content">
+  <div class="wad-body-content-title">Create a New Doctor</div>
 
-
-
-<p> Something about a new doctor </p>
 
 
 </div>

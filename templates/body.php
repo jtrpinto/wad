@@ -29,10 +29,10 @@ if(empty($class4)){
       <div id="wad-side-menu-collapse-button"><a href="#" onclick="collapseSideMenu()"><i class="fa fa-chevron-left" aria-hidden="true"></i></a></div>
     </div>
     <div id="wad-side-menu-collapsed">
-      <div class="<?php echo $class1; ?>"><i class="fa fa-home" aria-hidden="true"></i></div>
-      <div class="<?php echo $class2; ?>"><i class="fa fa-users" aria-hidden="true"></i></div>
-      <div class="<?php echo $class3; ?>"><i class="fa fa-calendar" aria-hidden="true"></i></div>
-      <div class="<?php echo $class4; ?>"><i class="fa fa-user-md" aria-hidden="true"></i></div>
+      <a href="index.php" style="text-decoration: none"><div class="<?php echo $class1; ?>"><i class="fa fa-home" aria-hidden="true"></i></div></a>
+      <a href="myPatients.php" style="text-decoration: none"><div class="<?php echo $class2; ?>"><i class="fa fa-users" aria-hidden="true"></i></div></a>
+      <a href="mySchedule.php" style="text-decoration: none"><div class="<?php echo $class3; ?>"><i class="fa fa-calendar" aria-hidden="true"></i></div></a>
+      <a href="manageMyInfo.php" style="text-decoration: none"><div class="<?php echo $class4; ?>"><i class="fa fa-user-md" aria-hidden="true"></i></div></a>
       <div id="wad-side-menu-collapse-button"><a href="#" onclick="openSideMenu()"><i class="fa fa-chevron-right" aria-hidden="true" onclick="openSideMenu"></i></a></div>
     </div>
   </div>

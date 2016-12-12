@@ -9,7 +9,7 @@ html {
 }
 body {
   max-width: 90%;
-  max-height: 90%;
+  height: 100%;
   margin: 0 auto;
   margin-top: 20px;
   font-family: 'Noto Sans', sans-serif;
@@ -21,7 +21,6 @@ body {
   display: none;
 }
 }
-
 /* To eliminate background image and margins, and use small side menu when the screen is small */
 @media (max-width: 70em) {
 html {
@@ -97,7 +96,7 @@ header > div, img {
 
 .wad-body{
   width: auto;
-  min-height: 500px;
+  min-height: 80%; /*500px*/
   background-color: #eee;
   display: flex;
 }
@@ -149,9 +148,46 @@ header > div, img {
 
 .wad-body-content-title{
   text-align: right;
+  background: #eee;
+  font-size:1.6em;
+  color:;
+}
+/*Formatação dos campos internos - Manage My*/
+/*Subtitulo*/
+.internal-content{
+  text-align: left;
   background:#eee;
   font-size:1.6em;
-
+}
+/*Componentes*/
+.internal-content-fields{
+  text-align: left;
+  background:#ddd;
+  font-size:1em;
+  color:#333;
+}
+label{
+  display:inline-block;
+  width:190px;
+  margin-bottom:10px;
+  padding-top:1em;
+  padding-left:1em;
+}
+.input-text{
+  /*display: table-cell;*/
+  text-align: right;
+  padding-right: 2%;
+  width: 15% 
+}
+.input-box{
+  /*display: table-cell;*/
+  width:60%;
+}
+.input-box-half{
+  width:20.8%;
+}
+input{
+  display: inline-block;
 }
 
 .wad-body-content-box{
@@ -180,7 +216,7 @@ header > div, img {
   background: rgba(50,50,50,0.9);
   min-height:200px;
   position: absolute;
-  top: 0;
+  top: 20%;
   left: 0;
   right: 0;
   color:#eee;
@@ -194,6 +230,7 @@ header > div, img {
 
 .wad-popup a{
   color:inherit;
+
 }
 
 #wad-doctor-popup-pic{
