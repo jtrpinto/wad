@@ -1,5 +1,5 @@
 <?php
 $stmt = $conn->prepare('SELECT * FROM wad.appointments');
 $stmt->execute();
-$categories = $srtmt->fetchAll();
+$categories = $stmt->fetchAll();
 ?>

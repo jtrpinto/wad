@@ -6,12 +6,14 @@ html {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: fixed;
+  min-width: 35em;
 }
 body {
-  max-width: 90%;
-  height: 100%;
+  max-width: 70em;
+  height: 90%;
   margin: 0 auto;
   margin-top: 20px;
+  margin-bottom: 20px;
   font-family: 'Noto Sans', sans-serif;
 }
 .wad-side-menu{
@@ -25,6 +27,7 @@ body {
 @media (max-width: 70em) {
 html {
   background-color: #fff;
+  min-width: 35em;
 }
 body {
   width: 100%;
@@ -184,7 +187,7 @@ label{
   width:60%;
 }
 .input-box-half{
-  width:20.8%;
+  width:20.4%;
 }
 input{
   display: inline-block;

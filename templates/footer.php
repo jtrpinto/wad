@@ -1,6 +1,6 @@
 </div>
 <footer>
-  &#169 João Ribeiro Pinto and Patrícia Loureiro Rodrigues. Web Aided Diagnosis. Web Technologies. FEUP 2016.
+  &#169 Jo&atilde;o Ribeiro Pinto and Patr&iacute;cia Loureiro Rodrigues. Web Aided Diagnosis. Web Technologies. FEUP 2016.
 </footer>
 <div id="wad-doctor-popup" class="wad-popup">
   <a class="wad-popup-icon" href="#" onclick="closePopUp('wad-doctor-popup')"><i class="fa fa-times" aria-hidden="true"></i></a>
