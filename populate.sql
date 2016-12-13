@@ -28,6 +28,11 @@ INSERT INTO doctors (first_name, last_name, birth_date, gender, phone, citizen_i
 VALUES ('Christopher', 'Turk', '1980-09-11', 'm', '445550877', '11109938', 'turky@wad.us', '1', '2005-09-20', '1',
     'MostGiantDoctor', 'turky', 'USA', 'San DiFrangeles, CA', 'Kent Blvd.', '6C', '1022', '23404');
 
+INSERT INTO doctors (first_name, last_name, birth_date, gender, phone, citizen_id, email,
+  speciality_id, first_day_of_service, is_active, password, username,
+  country, city, street, floor_app, doornumber, postal_code)
+VALUES ('Perry', 'Cox', '1969-03-12', 'm', '445554505', '10036644', 'cox@wad.us', '1', '1996-08-22', '1',
+    'NotMyProblem', 'cox', 'USA', 'San DiFrangeles, CA', 'Main Ave.', '44-A', '122', '23406');
 
 /* PATIENTS */
 
