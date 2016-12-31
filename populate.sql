@@ -60,3 +60,31 @@ INSERT INTO patients (first_name, last_name, birth_date, gender, phone, healthca
   country, city, street, floor_app, door_number, postal_code)
 VALUES ('Donald', 'Drumpf', '1946-06-14', 'm', '325559909', '19882006', 'trump@me.us',
   'USA', 'New York, NY', '5th Ave.', '67A', '1', '10022');
+  
+INSERT INTO patients (first_name, last_name, birth_date, gender, phone, healthcare_id, email,
+  country, city, street, floor_app, door_number, postal_code)
+VALUES ('William', 'Bell', '1951-05-12', 'm', '025556988', '19885541', 'bell@massdyn.com',
+  'USA', 'Boston, MA', 'Charles Blvd.', '2A', '33', '66802');
+  
+INSERT INTO patients (first_name, last_name, birth_date, gender, phone, healthcare_id, email,
+  country, city, street, floor_app, door_number, postal_code)
+VALUES ('Olivia', 'Dunham', '1982-08-03', 'f', '025550025', '20140036', 'dunham@fbi.gov',
+  'USA', 'Boston, MA', 'Langdon Rd.', '3D', '230', '66742');
+  
+INSERT INTO patients (first_name, last_name, birth_date, gender, phone, healthcare_id, email,
+  country, city, street, floor_app, door_number, postal_code)
+VALUES ('Rachel', 'Dunham', '1986-10-23', 'f', '025550226', '20036654', 'rach_dun@gmail.com',
+  'USA', 'Boston, MA', 'Langdon Rd.', '3D', '230', '66742');
+  
+INSERT INTO patients (first_name, last_name, birth_date, gender, phone, healthcare_id, email,
+  country, city, street, floor_app, door_number, postal_code)
+VALUES ('Astrid', 'Farnsworth', '1985-02-07', 'f', '045559903', '14404000', 'farnsworth@fbi.gov',
+  'USA', 'Allston, MA', 'Massachussetts Rd.', '21F', '1036', '66798');
+  
+INSERT INTO patients (first_name, last_name, birth_date, gender, phone, healthcare_id, email,
+  country, city, street, floor_app, door_number, postal_code)
+VALUES ('Walter', 'Bishop', '1952-06-06', 'm', '025550055', '10024458', 'bishop@aol.com',
+  'USA', 'Cambridge, MA', 'Harvard Ave.', '2C', '2210', '66788');
+
+
+/* APPOINTMENTS */
