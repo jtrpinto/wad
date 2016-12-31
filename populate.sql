@@ -1,10 +1,10 @@
-/* SPECIALITIES */
+/* SPECIALITIES (1) */
 
 INSERT INTO speciality (name_speciality, notes)
 VALUES ('Osteoporosis','');
 
 
-/* DOCTORS */
+/* DOCTORS (6) */
 
 INSERT INTO doctors (first_name, last_name, birth_date, gender, phone, citizen_id, email,
   speciality_id, first_day_of_service, is_active, password, username,
@@ -43,7 +43,7 @@ VALUES ('Molly', 'Clock', '1975-04-22', 'f', '405554059', '10216040', 'clock@wad
     'Frr0098', 'molly01', 'USA', 'San DiFrangeles, CA', 'Silly St.', '62-D', '1209', '23401');
 
 
-/* PATIENTS */
+/* PATIENTS (10) */
 
 INSERT INTO patients (first_name, last_name, birth_date, gender, phone, healthcare_id, email,
   country, city, street, floor_app, door_number, postal_code)
@@ -96,7 +96,7 @@ VALUES ('Walter', 'Bishop', '1952-06-06', 'm', '025550055', '10024458', 'bishop@
   'USA', 'Cambridge, MA', 'Harvard Ave.', '2C', '2210', '66788');
 
 
-/* APPOINTMENTS */
+/* APPOINTMENTS (55) */
 
 INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
 VALUES ('2017-01-02', '10:30:00', 'F', '1', '6');
@@ -253,3 +253,36 @@ VALUES ('2017-01-10', '11:00:00', 'C', '6', '8');
 
 INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
 VALUES ('2017-01-10', '12:00:00', 'D', '6', '7');
+
+
+/* TREATMENTS (10) */
+
+INSERT INTO treatments (name, dose, type_treatment)
+VALUES ('Alendronate', '200mg', 'Pill');
+
+INSERT INTO treatments (name, dose, type_treatment)
+VALUES ('Risendronate', '600mg', 'Pill');
+
+INSERT INTO treatments (name, dose, type_treatment)
+VALUES ('Ibandronate', '400mg', 'Pill');
+
+INSERT INTO treatments (name, dose, type_treatment)
+VALUES ('Zoledronic Acid', '500mg', 'Injection');
+
+INSERT INTO treatments (name, dose, type_treatment)
+VALUES ('Raloxifen', '200mg', 'Injection');
+
+INSERT INTO treatments (name, dose, type_treatment)
+VALUES ('Denosumab', '1000mg', 'Pill');
+
+INSERT INTO treatments (name, dose, type_treatment)
+VALUES ('Teparatide', '1000mg', 'Pill');
+
+INSERT INTO treatments (name, dose, type_treatment)
+VALUES ('Vitamin D Supplement', '700IU', 'Pill');
+
+INSERT INTO treatments (name, dose, type_treatment)
+VALUES ('Calcium Supplement', '600mg', 'Pill');
+
+INSERT INTO treatments (name, dose, type_treatment)
+VALUES ('Osteoporosis physiotherapy', '-', 'Physiotherapy');
