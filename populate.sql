@@ -286,3 +286,48 @@ VALUES ('Calcium Supplement', '600mg', 'Pill');
 
 INSERT INTO treatments (name, dose, type_treatment)
 VALUES ('Osteoporosis physiotherapy', '-', 'Physiotherapy');
+
+
+/* TREAT_PER_PATIENTS (14) */
+
+INSERT INTO treat_per_patients (patient_id, treatment_id, start_date, end_date, frequency)
+VALUES ('1', '1', '2016-11-30', '2016-12-15', '1 unit/day');
+
+INSERT INTO treat_per_patients (patient_id, treatment_id, start_date, end_date, frequency)
+VALUES ('1', '4', '2016-12-22', '2017-01-07', '2 unit/day');
+
+INSERT INTO treat_per_patients (patient_id, treatment_id, start_date, end_date, frequency)
+VALUES ('2', '5', '2016-12-11', '2016-12-16', '2 unit/day');
+
+INSERT INTO treat_per_patients (patient_id, treatment_id, start_date, end_date, frequency)
+VALUES ('2', '2', '2017-01-02', '2017-01-09', '2 unit/day');
+
+INSERT INTO treat_per_patients (patient_id, treatment_id, start_date, end_date, frequency)
+VALUES ('3', '2', '2017-01-02', '2017-01-09', '1 unit/day');
+
+INSERT INTO treat_per_patients (patient_id, treatment_id, start_date, end_date, frequency)
+VALUES ('4', '3', '2017-01-04', '2017-01-13', '2 unit/day');
+
+INSERT INTO treat_per_patients (patient_id, treatment_id, start_date, end_date, frequency)
+VALUES ('5', '8', '2016-12-11', '2016-12-16', '2 unit/day');
+
+INSERT INTO treat_per_patients (patient_id, treatment_id, start_date, end_date, frequency)
+VALUES ('5', '2', '2017-01-02', '2017-01-09', '1 unit/day');
+
+INSERT INTO treat_per_patients (patient_id, treatment_id, start_date, end_date, frequency)
+VALUES ('6', '2', '2017-01-02', '2017-01-09', '1 unit/day');
+
+INSERT INTO treat_per_patients (patient_id, treatment_id, start_date, end_date, frequency)
+VALUES ('7', '3', '2017-01-04', '2017-01-13', '2 unit/day');
+
+INSERT INTO treat_per_patients (patient_id, treatment_id, start_date, end_date, frequency)
+VALUES ('8', '8', '2016-12-11', '2016-12-16', '2 unit/day');
+
+INSERT INTO treat_per_patients (patient_id, treatment_id, start_date, end_date, frequency)
+VALUES ('8', '10', '2016-12-18', '2017-01-20', '2 h/day');
+
+INSERT INTO treat_per_patients (patient_id, treatment_id, start_date, end_date, frequency)
+VALUES ('9', '9', '2017-01-02', '2017-01-09', '2 unit/day');
+
+INSERT INTO treat_per_patients (patient_id, treatment_id, start_date, end_date, frequency)
+VALUES ('10', '10', '2016-12-10', '2017-01-10', '1.5 h/day');
