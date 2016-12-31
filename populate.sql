@@ -1,3 +1,5 @@
+/* SPECIALITIES */
+
 INSERT INTO speciality (name_speciality, notes)
 VALUES ('Osteoporosis','');
 
@@ -33,6 +35,13 @@ INSERT INTO doctors (first_name, last_name, birth_date, gender, phone, citizen_i
   country, city, street, floor_app, doornumber, postal_code)
 VALUES ('Perry', 'Cox', '1969-03-12', 'm', '445554505', '10036644', 'cox@wad.us', '1', '1996-08-22', '1',
     'NotMyProblem', 'cox', 'USA', 'San DiFrangeles, CA', 'Main Ave.', '44-A', '122', '23406');
+    
+INSERT INTO doctors (first_name, last_name, birth_date, gender, phone, citizen_id, email,
+  speciality_id, first_day_of_service, is_active, password, username,
+  country, city, street, floor_app, doornumber, postal_code)
+VALUES ('Molly', 'Clock', '1975-04-22', 'f', '405554059', '10216040', 'clock@wad.us', '1', '1999-12-02', '1',
+    'Frr0098', 'molly01', 'USA', 'San DiFrangeles, CA', 'Silly St.', '62-D', '1209', '23401');
+
 
 /* PATIENTS */
 
@@ -88,3 +97,159 @@ VALUES ('Walter', 'Bishop', '1952-06-06', 'm', '025550055', '10024458', 'bishop@
 
 
 /* APPOINTMENTS */
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-02', '10:30:00', 'F', '1', '6');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-02', '11:30:00', 'B', '1', '7');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-02', '14:30:00', 'D', '1', '9');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-04', '10:00:00', 'G', '1', '4');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-04', '11:30:00', 'E', '1', '2');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-06', '15:00:00', 'C', '1', '4');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-02', '09:00:00', 'G', '2', '4');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-02', '10:00:00', 'A', '2', '10');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-02', '15:00:00', 'A', '2', '9');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-05', '10:00:00', 'D', '2', '3');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-05', '10:30:00', 'C', '2', '5');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-05', '11:00:00', 'C', '2', '8');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-05', '12:00:00', 'D', '2', '7');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-02', '10:30:00', 'F', '1', '6');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-02', '11:30:00', 'B', '1', '7');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-02', '14:30:00', 'D', '1', '9');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-04', '10:00:00', 'G', '1', '4');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-04', '11:30:00', 'E', '1', '2');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-06', '15:00:00', 'C', '1', '4');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-02', '09:00:00', 'G', '2', '4');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-02', '10:00:00', 'A', '2', '10');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-02', '15:00:00', 'A', '2', '9');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-05', '10:00:00', 'D', '2', '3');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-05', '10:30:00', 'C', '2', '5');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-05', '11:00:00', 'C', '2', '8');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-05', '12:00:00', 'D', '2', '7');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-03', '10:30:00', 'F', '3', '6');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-03', '11:30:00', 'B', '3', '7');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-03', '14:30:00', 'D', '3', '9');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-05', '10:00:00', 'G', '3', '4');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-05', '11:30:00', 'E', '3', '2');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-05', '15:00:00', 'C', '3', '4');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-04', '09:00:00', 'G', '4', '4');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-04', '10:00:00', 'A', '4', '10');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-04', '15:00:00', 'A', '4', '9');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-08', '10:00:00', 'D', '4', '3');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-08', '10:30:00', 'C', '4', '5');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-08', '11:00:00', 'C', '4', '8');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-08', '12:00:00', 'D', '4', '7');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-06', '10:30:00', 'F', '5', '6');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-06', '11:30:00', 'B', '5', '7');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-06', '14:30:00', 'D', '5', '9');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-07', '10:00:00', 'G', '5', '4');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-07', '11:30:00', 'E', '5', '2');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-05', '15:00:00', 'C', '5', '4');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-05', '09:00:00', 'G', '6', '4');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-05', '10:00:00', 'A', '6', '10');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-05', '15:00:00', 'A', '6', '9');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-10', '10:00:00', 'D', '6', '3');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-10', '10:30:00', 'C', '6', '5');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-10', '11:00:00', 'C', '6', '8');
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2017-01-10', '12:00:00', 'D', '6', '7');
