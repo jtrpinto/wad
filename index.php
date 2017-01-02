@@ -5,70 +5,32 @@ $_GET['class2'] = "";
 $_GET['class3'] = "";
 $_GET['class4'] = "";
 include('templates/body.php');
+include_once('1_database_appointments.php');
+include_once('templates/calendar.php');
 ?>
 
 <div class="wad-body-content">
   <div class="wad-body-content-title">Schedule</div>
   <div class="wad-body-content-box">
-    <div class="month">
-      <ul>
-        <li class="prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></li>
-        <li class="next"><i class="fa fa-chevron-right" aria-hidden="true"></i></li>
-        <li>
-          August 2016
-        </li>
-      </ul>
-    </div>
-    <ul class="weekdays">
-      <li>Mo</li>
-      <li>Tu</li>
-      <li>We</li>
-      <li>Th</li>
-      <li>Fr</li>
-      <li>Sa</li>
-      <li>Su</li>
-    </ul>
-    <ul class="days">
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-      <li>5</li>
-      <li>6</li>
-      <li>7</li>
-      <li>8</li>
-      <li>9</li>
-      <li><span class="active">10</span></li>
-      <li>11</li>
-      <li>12</li>
-      <li>13</li>
-      <li>14</li>
-      <li>15</li>
-      <li>16</li>
-      <li>17</li>
-      <li>18</li>
-      <li>19</li>
-      <li>20</li>
-      <li>21</li>
-      <li>22</li>
-      <li>23</li>
-      <li>24</li>
-      <li>25</li>
-      <li>26</li>
-      <li>27</li>
-      <li>28</li>
-      <li>29</li>
-      <li>30</li>
-      <li>31</li>
-    </ul>
+    <?php
+      $calendar = new Calendar();
+      echo $calendar->show();
+    ?>
   </div>
   <div class="wad-half-body-division">
     <div class="wad-half-body-content">
       <div class="wad-body-content-title">Next Appointments</div>
         <div class="wad-body-content-box">
           <ul>
-            <?php foreach ($appointments_info as $appointment) { ?>
-              <li><?=$appointment['description'];?></li>
+            <?php 
+            $futureAppointments = selectFutureAppointments($appointments_info_doctor,$currentDate,$currentTime);
+            foreach ($futureAppointments as $appointment) { ?>
+              <li><b>
+              Room <?=$appointment['room'];?>
+              <?=$appointment['appointment_time'];?></b>
+              <?=$appointment['appointment_date'];?>
+              <?=$appointment['first_name_patient'];?>
+              <?=$appointment['last_name_patient'];?></li>
             <?php };?>
           </ul>
         </div>

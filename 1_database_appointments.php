@@ -12,6 +12,9 @@ $doctor_id = $_GET["doctor_id"];
 	$appointments_info->execute(array($doctor_id));
 	$appointments_info_doctor = $appointments_info->fetchAll();
 
+	$currentDate = date('Y-m-d');
+	$currentTime = date('H:i:s');
+
 /*function selectDistinctPatients($appointmentsTotalInformation){
 	/*Colocar os pacientes de um médico apenas pela ultima consulta*//*
 	foreach ($appointmentsTotalInformation as $appointment_info_doctor) {
@@ -80,4 +83,17 @@ function orderByCurrentDiagnosisNegative($appointmentsTotalInformation){
 
 	}
 }*/
+
+function selectFutureAppointments($appointmentsTotalInformation,$currentDate,$currentTime){
+	$futureApp = [];
+	foreach ($appointmentsTotalInformation as $appointment){
+		if ($appointment['appointment_date'] > $currentDate) {
+			$futureApp[] = $appointment;
+		}
+		elseif ($appointment['appointment_date'] == $currentDate && $appointment['appointment_time'] >= $currentTime) {
+			$futureApp[] = $appointment;
+		}
+	}
+	return $futureApp;
+}
 ?>
