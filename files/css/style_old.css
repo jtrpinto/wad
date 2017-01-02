@@ -1,0 +1,362 @@
+/* To add margins and use large side menu when the screen is large */
+@media (min-width: 70em) {
+html {
+  min-height: 100%;
+  background-image: url('../img/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: fixed;
+  min-width: 35em;
+}
+body {
+  max-width: 70em;
+  height: 90%;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: 'Noto Sans', sans-serif;
+}
+.wad-side-menu{
+  width: 14em;
+}
+#wad-side-menu-collapsed{
+  display: none;
+}
+}
+/* To eliminate background image and margins, and use small side menu when the screen is small */
+@media (max-width: 70em) {
+html {
+  background-color: #fff;
+  min-width: 35em;
+}
+body {
+  width: 100%;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+.wad-side-menu{
+  width: 3em;
+}
+#wad-side-menu-opened{
+  display:none;
+}
+}
+
+header {
+  background-color: #fff;
+  margin: 0;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-color: #ddd;
+  padding: 15px;
+  text-align: center;
+  height: 60px;
+}
+
+footer{
+  background: #fff;
+  margin:0;
+  border-top-style:solid;
+  border-top-width:2px;
+  border-color:#ddd;
+  padding:10px;
+  text-align:right;
+  font-size: 0.6em;
+}
+
+header > div, img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#wad-header-doctor-info {
+  float: right;
+}
+
+#wad-header-doctor-pic {
+  border-radius: 30px;
+}
+
+#wad-header-date-time {
+  float: left;
+  text-align: left;
+  margin-top:10px;
+}
+
+.white_content {
+  display: none;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  padding: 16px;
+  border: 16px solid orange;
+  background-color: white;
+  z-index: 1002;
+  overflow: auto;
+}
+
+.wad-body{
+  width: auto;
+  min-height: 80%; /*500px*/
+  background-color: #eee;
+  display: flex;
+}
+
+.wad-side-menu{
+  display: inline-block;
+  vertical-align: top;
+  background-color: #ddd;
+  min-height: 500px;
+  margin:0;
+}
+
+.wad-body-content{
+  padding: 20px;
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+}
+.wad-body-content-login{
+  padding: 0px;
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+  background-color: #eee;
+  width: 100%;
+}
+.wad-body-content-login-img{
+  margin-top: 200px;
+}
+.login-form{
+  text-align: center;
+  margin-bottom: 100px;
+}
+.wad-side-menu-button{
+  width:auto;
+  margin:10px;
+  padding:5px;
+  background-color: #eee;
+  text-align:center;
+  color:#333;
+  font-size: 0.9em;
+}
+
+.wad-side-menu-button-active{
+  width:auto;
+  margin:10px;
+  padding:5px;
+  background-color: #548235;
+  text-align:center;
+  color:#fff;
+  font-size:0.9em;
+}
+
+#wad-side-menu-collapse-button {
+  text-align: right;
+  margin:15px;
+  color:#bbb;
+}
+
+#wad-side-menu-collapse-button a{
+  color:inherit;
+}
+
+.wad-body-content-title{
+  text-align: right;
+  background: #eee;
+  font-size:1.6em;
+}
+.wad-body-content-title-login{
+  text-align: center;
+  background: #eee;
+  font-size:1.6em;
+  margin-top:20px;
+  margin-bottom: 50px;
+}
+/*Formatação dos campos internos - Manage My*/
+/*Subtitulo*/
+.internal-content{
+  text-align: left;
+  background:#eee;
+  font-size:1.6em;
+}
+/*Componentes*/
+.internal-content-fields{
+  text-align: left;
+  background:#ddd;
+  font-size:1em;
+  color:#333;
+}
+label{
+  display:inline-block;
+  width:190px;
+  margin-bottom:10px;
+  padding-top:1em;
+  padding-left:1em;
+}
+.input-text{
+  /*display: table-cell;*/
+  text-align: right;
+  padding-right: 2%;
+  width: 15% 
+}
+.input-box{
+  /*display: table-cell;*/
+  width:60%;
+  color: #eee;
+  font-size:1em;
+}
+.input-box-half{
+  width:20.4%;
+}
+input{
+  display: inline-block;
+}
+.button-submit{
+  width:150px;
+  text-align: center;
+}
+
+.wad-body-content-box{
+  text-align: left;
+  background:#eee;
+  margin-bottom: 30px;
+}
+.wad-body-content-box-login{
+  text-align: left;
+  background:#eee;
+  
+  margin-bottom: 30px;
+}
+
+.wad-half-body-content{
+  width:50%;
+}
+
+.wad-half-body-content + .wad-half-body-content{
+  margin-left:25px;
+}
+
+.wad-half-body-division{
+  display: inline-flex;
+  width:100%;
+}
+
+.wad-popup{
+  visibility: hidden;
+  max-width: 45em;
+  margin: 0 auto;
+  background: rgba(50,50,50,0.9);
+  min-height:200px;
+  position: absolute;
+  top: 20%;
+  left: 0;
+  right: 0;
+  color:#eee;
+  padding: 15px;
+  text-align: center;
+}
+
+.wad-popup-icon{
+  float:right;
+}
+
+.wad-popup a{
+  color:inherit;
+
+}
+
+#wad-doctor-popup-pic{
+  border-radius: 75px;
+}
+
+#wad-doctor-popup-name{
+  margin: 20px;
+  font-weight:bold;
+  font-size: 1.2em;
+}
+
+.wad-popup-button{
+  max-width:20em;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom:10px;
+  padding: 10px;
+  background:#555;
+}
+
+
+
+
+/* Calendar (retirado de w3schools) ================================================================ */
+/* Month header */
+.month {
+    padding: 10px 25px;
+    background: #548235;
+    text-align: center;
+}
+
+/* Month list */
+.month ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.month ul li {
+    color: white;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Previous button inside month header */
+.month .prev {
+    float: left;
+}
+
+/* Next button */
+.month .next {
+    float: right;
+}
+
+/* Weekdays (Mon-Sun) */
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color:#ddd;
+}
+
+.weekdays li {
+    display: inline-block;
+    width: 13.6%;
+    color: #666;
+    text-align: center;
+}
+
+/* Days (1-31) */
+.days {
+    padding: 10px 0;
+    background: #eee;
+    margin: 0;
+}
+
+.days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 13.6%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size:1em;
+    color:#777;
+}
+
+/* Highlight the "current" day */
+.days li .active {
+    padding: 5px;
+    background: #ccc;
+    color: white !important
+}
+/* ====================================================================================== */

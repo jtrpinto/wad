@@ -1,8 +1,9 @@
 <?php
-include_once('config/init.php');
-include_once('database/appointments.php');
 include('templates/header.php');
 $_GET['class1'] = "wad-side-menu-button-active";
+$_GET['class2'] = "";
+$_GET['class3'] = "";
+$_GET['class4'] = "";
 include('templates/body.php');
 ?>
 
@@ -66,9 +67,9 @@ include('templates/body.php');
       <div class="wad-body-content-title">Next Appointments</div>
         <div class="wad-body-content-box">
           <ul>
-            <?php foreach ($categories as $category) { ?>
-              <li><?=$category['description'];?></li>
-            <? };?>
+            <?php foreach ($appointments_info as $appointment) { ?>
+              <li><?=$appointment['description'];?></li>
+            <?php };?>
           </ul>
         </div>
       </div>

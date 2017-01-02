@@ -21,3 +21,16 @@ function openNewPage(id){
 function closePopUp(id){
   document.getElementById(id).style.visibility = 'hidden';
 }
+
+function mySelectChange(id){
+	var array = document.getElementById('label_id').innerHTML;
+
+	alert(array);
+
+	var array2 = <?php print_r( json_encode($php_array)); ?>;
+
+	alert(array2);
+
+	document.getElementById('patient_list').innerHTML = '<a href="#">Hello.</a>';
+
+}
