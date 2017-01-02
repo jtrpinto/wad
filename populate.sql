@@ -35,7 +35,7 @@ INSERT INTO doctors (first_name, last_name, birth_date, gender, phone, citizen_i
   country, city, street, floor_app, doornumber, postal_code)
 VALUES ('Perry', 'Cox', '1969-03-12', 'm', '445554505', '10036644', 'cox@wad.us', '1', '1996-08-22', '1',
     'NotMyProblem', 'cox', 'USA', 'San DiFrangeles, CA', 'Main Ave.', '44-A', '122', '23406');
-    
+
 INSERT INTO doctors (first_name, last_name, birth_date, gender, phone, citizen_id, email,
   speciality_id, first_day_of_service, is_active, password, username,
   country, city, street, floor_app, doornumber, postal_code)
@@ -49,47 +49,47 @@ INSERT INTO patients (first_name, last_name, birth_date, gender, phone, healthca
   country, city, street, floor_app, door_number, postal_code)
 VALUES ('Kevin', 'Pork', '1984-06-25', 'm', '445559744', '02256000', 'smells_like@bacon.here',
   'USA', 'Sacramento, CA', 'Jason St.', 'D3', '344', '20114');
-  
+
 INSERT INTO patients (first_name, last_name, birth_date, gender, phone, healthcare_id, email,
   country, city, street, floor_app, door_number, postal_code)
 VALUES ('Janey', 'Osment', '1945-03-23', 'f', '445559703', '02256098', 'old_mrs_janey@at.us',
   'USA', 'Sacramento, CA', 'Murica Ave.', '33', '2098', '20119');
-  
+
 INSERT INTO patients (first_name, last_name, birth_date, gender, phone, healthcare_id, email,
   country, city, street, floor_app, door_number, postal_code)
 VALUES ('Lloyd', 'Green', '1989-04-10', 'm', '445559709', '12022022', 'greenaf@gmail.com',
   'USA', 'Silicon Valley, CA', 'Gates St.', '32-A', '12098', '25669');
-  
+
 INSERT INTO patients (first_name, last_name, birth_date, gender, phone, healthcare_id, email,
   country, city, street, floor_app, door_number, postal_code)
 VALUES ('Keith', 'Sorensson', '1982-06-11', 'm', '445550029', '10021458', 'k_sorens@son.se',
   'USA', 'San DiFrangeles, CA', 'White Ave.', '3F', '120', '23401');
-  
+
 INSERT INTO patients (first_name, last_name, birth_date, gender, phone, healthcare_id, email,
   country, city, street, floor_app, door_number, postal_code)
 VALUES ('Donald', 'Drumpf', '1946-06-14', 'm', '325559909', '19882006', 'trump@me.us',
   'USA', 'New York, NY', '5th Ave.', '67A', '1', '10022');
-  
+
 INSERT INTO patients (first_name, last_name, birth_date, gender, phone, healthcare_id, email,
   country, city, street, floor_app, door_number, postal_code)
 VALUES ('William', 'Bell', '1951-05-12', 'm', '025556988', '19885541', 'bell@massdyn.com',
   'USA', 'Boston, MA', 'Charles Blvd.', '2A', '33', '66802');
-  
+
 INSERT INTO patients (first_name, last_name, birth_date, gender, phone, healthcare_id, email,
   country, city, street, floor_app, door_number, postal_code)
 VALUES ('Olivia', 'Dunham', '1982-08-03', 'f', '025550025', '20140036', 'dunham@fbi.gov',
   'USA', 'Boston, MA', 'Langdon Rd.', '3D', '230', '66742');
-  
+
 INSERT INTO patients (first_name, last_name, birth_date, gender, phone, healthcare_id, email,
   country, city, street, floor_app, door_number, postal_code)
 VALUES ('Rachel', 'Dunham', '1986-10-23', 'f', '025550226', '20036654', 'rach_dun@gmail.com',
   'USA', 'Boston, MA', 'Langdon Rd.', '3D', '230', '66742');
-  
+
 INSERT INTO patients (first_name, last_name, birth_date, gender, phone, healthcare_id, email,
   country, city, street, floor_app, door_number, postal_code)
 VALUES ('Astrid', 'Farnsworth', '1985-02-07', 'f', '045559903', '14404000', 'farnsworth@fbi.gov',
   'USA', 'Allston, MA', 'Massachussetts Rd.', '21F', '1036', '66798');
-  
+
 INSERT INTO patients (first_name, last_name, birth_date, gender, phone, healthcare_id, email,
   country, city, street, floor_app, door_number, postal_code)
 VALUES ('Walter', 'Bishop', '1952-06-06', 'm', '025550055', '10024458', 'bishop@aol.com',
@@ -253,6 +253,61 @@ VALUES ('2017-01-10', '11:00:00', 'C', '6', '8');
 
 INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
 VALUES ('2017-01-10', '12:00:00', 'D', '6', '7');
+
+/* doctor 1 */
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2016-02-12', '12:30:02', 'A', 1, 1);
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2016-02-12', '14:50:02', 'C', 1, 2);
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2016-02-13', '08:30:06', 'D', 1, 3);
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2016-02-13', '10:20:08', 'A', 1, 4);
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2016-02-14', '13:45:02', 'B', 1, 1);
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2016-02-15', '09:10:59', 'A', 1, 3);
+
+
+/* doctor 2 */
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2016-02-12', '13:45:02', 'F', 2, 4);
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2016-02-13', '10:56:01', 'A', 2, 5);
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2016-02-13', '11:20:08', 'B', 2, 4);
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2016-02-14', '10:40:02', 'B', 2, 4);
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2016-02-15', '10:25:59', 'F', 2, 5);
+
+
+/* doctor 3 */
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2016-02-15', '14:50:02', 'D', 3, 1);
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2016-02-15', '16:20:01', 'D', 3, 2);
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2016-02-16', '11:25:08', 'A', 3, 2);
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2016-02-20', '09:12:02', 'B', 3, 1);
+
+INSERT INTO appointments (appointment_date, appointment_time, room, doctor_id, patient_id)
+VALUES ('2016-02-20', '10:36:59', 'D', 3, 3);
 
 
 /* TREATMENTS (10) */
