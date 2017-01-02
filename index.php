@@ -5,6 +5,7 @@ $_GET['class2'] = "";
 $_GET['class3'] = "";
 $_GET['class4'] = "";
 include('templates/body.php');
+
 ?>
 
 <div class="wad-body-content">
