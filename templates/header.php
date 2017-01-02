@@ -11,8 +11,9 @@
 </head>
 <?php 
 include_once('config/init.php');
+// estaticamente definidos!!!
 $_GET['doctor_id'] = "1"; 
-$_GET['patient_id'] = "2"; 
+//$_GET['patient_id'] = "2"; 
 include_once('1_database_appointments.php');
 include('1_database_doctors.php');
 include('1_database_patients.php');

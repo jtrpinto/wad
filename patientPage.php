@@ -13,7 +13,7 @@ include('templates/body.php');
 
 <div class="wad-body-content-internal"> 
 <ul><div class="patient-photo">
-<a href="" class="img"><img src="files/img/<?php foreach ($patients as $patient){ echo $patient['healthcare_id']; } ?>.png"/></a>
+<a href="" class="img"><img src="files/img/patients/<?php foreach ($patients as $patient){ echo $patient['healthcare_id']; } ?>.jpg"/></a>
 </ul>
 <ul><div class="patient-info">
 <label> Healthcare ID: <?php echo $patient['healthcare_id'];?></label><br/>

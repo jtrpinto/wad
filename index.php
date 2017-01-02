@@ -5,14 +5,13 @@ $_GET['class2'] = "";
 $_GET['class3'] = "";
 $_GET['class4'] = "";
 include('templates/body.php');
-include_once('1_database_appointments.php');
 include_once('templates/calendar.php');
 ?>
 
 <div class="wad-body-content">
   <div class="wad-body-content-title">Schedule</div>
   <div class="wad-body-content-box">
-    <?php
+      <?php
       $calendar = new Calendar();
       echo $calendar->show();
     ?>

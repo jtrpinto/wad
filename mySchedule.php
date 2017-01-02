@@ -5,6 +5,7 @@ $_GET['class2'] = "";
 $_GET['class3'] = "wad-side-menu-button-active";
 $_GET['class4'] = "";
 include('templates/body.php');
+
 ?>
 
 <div id ="wad-manageMyInfo-page" class="wad-body-content">

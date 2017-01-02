@@ -268,50 +268,50 @@ input{
   width:100%;
 }
 /*===========================================================================*/
- /*======================== MY PATIENTS  =====================================*/
- /*===========================================================================*/
+/*======================== MY PATIENTS  =====================================*/
+/*===========================================================================*/
 .patients ul,
 .patients ul li{
-   float: left; 
-   padding:0px;
-   list-style: none;
- }
+  float: left; 
+  padding:0px;
+  list-style: none;
+}
 .patients ul{
-   width:100%;
-   margin-top: 20px;
- }
+  width:100%;
+  margin-top: 20px;
+}
 .patients ul li{
-   width: 25%;
-   margin-bottom: 10px;
- }
+  width: 25%;
+  margin-bottom: 10px;
+}
 .patient{
-   float:left;
-   width: 90%;
-   /*background-color: white;*/
-   border-radius: 30px;
-   position: relative;
- }
+  float:left;
+  width: 90%;
+  /*background-color: white;*/
+  border-radius: 30px;
+  position: relative;
+}
 .patient a{
-   float: left;
-   width: 100%;
-   text-align: center;
- }
+  float: left;
+  width: 100%;
+  text-align: center;
+}
 .patient a.img{
-   margin-top: 10px;
- }
+  margin-top: 10px;
+}
 .patient a.img img{
-   height: 170px;
-   max-width: 100%;
-   /*border-bottom: #BEBACE 5px solid;*/
-   border-radius: 50%;
- }
+  height: 170px;
+  max-width: 100%;
+  /*border-bottom: #BEBACE 5px solid;*/
+  border-radius: 50%;
+}
 .patient a.name{
-   font-weight: bolder;
-   color: black;
-   font-size:13px;
-   text-decoration: none;
-   margin-top: 10px;
- }
+  font-weight: bolder;
+  color: black;
+  font-size:13px;
+  text-decoration: none;
+  margin-top: 10px;
+}
 /*===========================================================================*/
 /*======================== PATIENT ==========================================*/
 /*===========================================================================*/
@@ -394,6 +394,7 @@ input{
   color:#333;
   margin-right: 20px;
 }
+
 
 /*===========================================================================*/
 /*======================== POPUP ============================================*/
