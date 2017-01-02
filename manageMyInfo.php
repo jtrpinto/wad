@@ -26,7 +26,7 @@ include('templates/body.php');
   <?php foreach ($doctor_information as $doctorinfo) { echo  $doctorinfo['birth_date']; } ; ?> 
   "></label><br />
   <label class="input-text">Gender:</label><input type="text" name="gender" class="input-box" value="
-  <?php foreach ($doctor_information as $doctorinfo) { 
+  <?php foreach ($doctor_information as $doctorinfo) { /*trocar para radio-button*/
   	if($doctorinfo['gender']=='f'){
   		echo "Female";
   	}
@@ -47,19 +47,19 @@ include('templates/body.php');
   <div class="wad-body-content-internal">Contact Information</div>
   <div class="wad-body-content-internal-fields">
   <form action="0_action_manageDoctorInfo.php" method="POST">
-  <label class="input-text">City:</label><input type="text" name="city" class="input-box" value="
+  <label class="input-text">City:</label><input type="text" name="city" class="input-box" placeholder="
   <?php foreach ($doctor_information as $doctorinfo) { echo  $doctorinfo['city']; } ; ?> 
   "></label><br />
-  <label class="input-text">Street:</label><input type="text" name="street" class="input-box" value="
+  <label class="input-text">Street:</label><input type="text" name="street" class="input-box" placeholder="
   <?php foreach ($doctor_information as $doctorinfo) { echo  $doctorinfo['street']; } ; ?> 
   "></label><br />
-  <label class="input-text">Postal Code:</label><input type="integer" name="postal_code" class="input-box-half" value="
+  <label class="input-text">Postal Code:</label><input type="integer" name="postal_code" class="input-box-half" placeholder="
   <?php foreach ($doctor_information as $doctorinfo) { echo  $doctorinfo['postal_code']; } ; ?> 
   "></label>
-  <label class="input-text">Number:</label><input type="integer" name="number" class="input-box-half" value="
+  <label class="input-text">Number:</label><input type="integer" name="number" class="input-box-half" placeholder="
   <?php foreach ($doctor_information as $doctorinfo) { echo  $doctorinfo['phone']; } ; ?> 
   "></label><br />
-  <label class="input-text">Email:</label><input type="text" name="email" class="input-box" value="
+  <label class="input-text">Email:</label><input type="text" name="email" class="input-box" placeholder="
   <?php foreach ($doctor_information as $doctorinfo) { echo  $doctorinfo['email']; } ; ?> 
   "></label><br />
   </form>

@@ -7,6 +7,7 @@
   <link rel="icon" href="files/img/WAD_icon.jpg"> <!-- Tab icon -->
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Open+Sans" rel="stylesheet"> <!-- Google Fonts -->
   <script src="https://use.fontawesome.com/9f7b30ab12.js"></script> <!-- Font Awesome -->
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 <?php 
 include_once('config/init.php');
