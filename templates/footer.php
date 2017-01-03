@@ -9,7 +9,7 @@
   <a href="manageMyInfo.php" style="text-decoration: none"><div class="wad-popup-button">Manage My Info</div></a>
   <a href="#"onclick="openPopUp('wad-doctor-delete-popup')" style="text-decoration: none"><div class="wad-popup-button">Delete My Account</div></a>
   <a href="createNewDoctor.php" style="text-decoration: none"><div class="wad-popup-button">Create a New Doctor's Account</div></a>
-   <a href="myLogIn.php" style="text-decoration: none"><div class="wad-popup-button">Log Out</div></a>
+   <a href="0_action_logout.php" style="text-decoration: none"><div class="wad-popup-button">Log Out</div></a> <!--colocar antes do login o logout: ainda não está a funcionar...-->
 </div>
 <div id="wad-doctor-delete-popup" class="wad-popup">
   <a class="wad-popup-icon" href="#" onclick="closePopUp('wad-doctor-delete-popup')"><i class="fa fa-times" aria-hidden="true"></i></a>

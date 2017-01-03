@@ -5,6 +5,7 @@ $_GET['class2'] = "wad-side-menu-button-active";
 $_GET['class3'] = "";
 $_GET['class4'] = "";
 include('templates/body.php');
+include('1_database_patients.php');
 ?>
 
 <div id ="wad-manageMyInfo-page" class="wad-body-content">
@@ -69,7 +70,7 @@ if(empty($class4)){
   <div class="wad-body-content-title-patient">Edit Patient Info</div>
   <div class="wad-body-content-internal-patient">Personal Information</div>
   <div class="wad-body-content-internal-fields-patient">
-  <form action="0_action_manageDoctorInfo.php" method="POST">
+  <form action="" method="POST"> <!--0_action_manageDoctorInfo.php-->
   <label class="input-text">First Name:</label><input type="text" name="first_name" class="input-box" placeholder="
   <?php foreach ($patients as $patient) { echo  $patient['first_name']; } ; ?> 
   "></label><br />
@@ -82,20 +83,10 @@ if(empty($class4)){
   <label class="input-text">Birth Date:</label><input type="date" name="birth_date" class="input-box" placeholder="
   <?php foreach ($patients as $patient) { echo  $patient['birth_date']; } ; ?> 
   "></label><br />
-  <label class="input-text">Gender:</label><input type="text" name="gender" class="input-box" placeholder="
-  <?php foreach ($patients as $patient) { /*trocar para radio-button*/
-    if($patient['gender']=='f'){
-      echo "Female";
-    }
-    elseif ($patient['gender']=='m') {
-      echo "Male";
-    }
-    else {
-      echo "Undefined";
-    }
-   
-   } ; ?> 
-  "></label><br />
+  <label class="input-text">Gender:</label>
+  <input type="radio" name="gender" <?php if (isset($patient['gender']) && $patient['gender']=='f') echo "checked";?> value="Female">Female
+  <input type="radio" name="gender" <?php if (isset($patient['gender']) && $patient['gender']=='m') echo "checked";?> value="Male">Male<br>
+
   <!--label class="input-text">Photo:</label><input type="text" name="photo" class="input-box" value="
   <?php foreach ($patients as $patient) { echo  $patient['photo']; } ; ?> 
   "></label><br /-->

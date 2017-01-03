@@ -10,13 +10,22 @@
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 <?php 
+//session_start();
 include_once('config/init.php');
-// estaticamente definidos!!!
-$_GET['doctor_id'] = "1"; 
+//$_GET['doctor_id'] = "1"; 
+if(isset($_SESSION['doctor_id'])){
+  $doctor_id=$_SESSION['doctor_id'];
+
+  //file_put_contents('abc.txt', print_r($doctor_id, true));
+}
+else{ 
+  header ('Location: myLogin.php');
+}
+
 //$_GET['patient_id'] = "2"; 
 include_once('1_database_appointments.php');
 include('1_database_doctors.php');
-include('1_database_patients.php');
+//include('1_database_patients.php');
 ?>
 <body>
   <header>

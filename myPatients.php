@@ -5,7 +5,8 @@ $_GET['class2'] = "wad-side-menu-button-active";
 $_GET['class3'] = "";
 $_GET['class4'] = "";
 include('templates/body.php');
-
+$_GET['patient_id'] = "2"; // este patient está definido estaticamente...
+include('1_database_patients.php');
 ?>
 
 <div id ="wad-manageMyInfo-page" class="wad-body-content">
@@ -34,7 +35,7 @@ include('templates/body.php');
 
   <form><label class="input-text" name="ordered_by">Select list:</label>
    <select id = "ordered_by" class="input-box" onchange="mySelectChange(this.options[this.selectedIndex].value)">
-     <option value="1">Last Appointment (Most Rrecent First)</option>
+     <option value="1">Last Appointment (Most Recent First)</option>
      <option value="2">Last Appointment (Least Recent First)</option>
      <option value="3">Future Appointment (Nearest First)</option>
      <option value="4">Last Name (Ascending)</option>
@@ -83,6 +84,7 @@ include('templates/body.php');
     //alert(id);
 
     var preordered = [];
+    var finalordered = [];
     var ids_position = [];
     var ordenated = [];
 
@@ -103,17 +105,17 @@ include('templates/body.php');
         break;
       case '2':
          // Last Appointment (least recent first)
-        preordered = array.sort(function(a,b){return b["date"] < a["date"]});
+        preordered = array.sort(function(a,b){return a["date"] < b["date"]});
         //alert (JSON.stringify(preordered)+"\n\n\n");
 
         for(var i = 0; i < preordered.length; i++){
           var p_id = preordered[i]["patient_id"];
           if (jQuery.inArray(p_id, ids_position)==-1){
             ids_position.push(p_id);
-            ordenated.push(preordered[i]);
+            finalordered.push(preordered[i]);
           }
         }
-
+        ordenated= finalordered.sort(function(a,b){return b["date"] < a["date"]});
         break;
       case '3':
         break;

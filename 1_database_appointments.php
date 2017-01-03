@@ -1,7 +1,7 @@
 <?php
 include_once('config/init.php');
 
-$doctor_id = $_GET["doctor_id"];
+$doctor_id = $_SESSION["doctor_id"];
 
 	global $conn; /*DISTINCT*/
 	$appointments_info = $conn->prepare('SELECT  a.id,  a.appointment_date,  a.appointment_time,  a.room,  a.doctor_id,  a.patient_id, p.first_name AS first_name_patient, p.last_name AS last_name_patient, p.healthcare_id AS patient_healthcare_id, d.first_name AS first_name_doctor, d.last_name AS last_name_doctor
@@ -22,9 +22,9 @@ $doctor_id = $_GET["doctor_id"];
 		if ($appointment_info_doctor['patient_id'])
 	}
 }*/
-
+/*
 function DateTimeComparatorMostRecent($date1, $date2, $time1, $time2){
-	/*Compara 2 datas, devolve a mais recente*/
+	/*Compara 2 datas, devolve a mais recente*//*
 		if ($date1 == $date2){
 			if ($time1 == $time2){
 				return 0;
