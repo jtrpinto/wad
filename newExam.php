@@ -13,12 +13,18 @@ $patientList = $patient_info->fetchAll();
 
 <div class="wad-body-content">
   <div class="wad-body-content-title">New Exam</div>
+  <br>
   <div class="wad-body-content-box">
     <form id="patient_select_form" method="POST">
       Patient: 
       <select name='pat-id' class="input-box">
         <?php foreach ($patientList as $patient) {?>
-            <option value="<?=$patient['id']?>"><?=$patient['first_name']?> <?=$patient['last_name']?></option>
+            <option value="<?=$patient['id']?>"
+            <?php if (isset($_POST['pat-id'])) {
+                if ($patient['id']==$_POST['pat-id']) {
+                    echo 'selected="selected"';
+                } } ?>
+            ><?=$patient['first_name']?> <?=$patient['last_name']?></option>
         <?php } ?>
       </select>
       <input type="submit" class="button-submit" value="Choose">
@@ -33,7 +39,7 @@ $patientList = $patient_info->fetchAll();
     else {
         $pat_id = 1;
     }
-    $appointments_info = $conn->prepare('SELECT * FROM wad.appointments WHERE id = ?');
+    $appointments_info = $conn->prepare('SELECT * FROM wad.appointments WHERE patient_id = ?');
     $appointments_info->execute(array($pat_id));
     $appointmentsList = $appointments_info->fetchAll();
 
