@@ -30,8 +30,6 @@ $patientList = $patient_info->fetchAll();
       <input type="submit" class="button-submit" value="Choose">
     </form>
 
-  </div>
-
   <?php
     if (isset($_POST['pat-id'])){
         $pat_id = $_POST['pat-id'];
@@ -39,13 +37,28 @@ $patientList = $patient_info->fetchAll();
     else {
         $pat_id = 1;
     }
-    $appointments_info = $conn->prepare('SELECT * FROM wad.appointments WHERE patient_id = ?');
+    $appointments_info = $conn->prepare('SELECT * FROM wad.appointments WHERE patient_id = ? ORDER BY appointment_date DESC');
     $appointments_info->execute(array($pat_id));
     $appointmentsList = $appointments_info->fetchAll();
-
-    print_r($appointmentsList);
   ?>
 
+      <br>
+      Appointment: 
+      <select name="appointment-id" class="input-box">
+        <?php foreach ($appointmentsList as $appointment) {?>
+            <option value="<?=$appointment['id']?>">
+            <?=$appointment['appointment_date']?> - <?=$appointment['appointment_time']?></option>
+        <?php } ?>
+      </select>
+
+      <br><br>
+      Exam date:
+      <input class="input-box" type="date" name="exam_date">
+
+      <br><br>
+      Prescription date:
+      <input class="input-box" type="date" name="date_prescribed">
+  </div>
 </div>
 
 <?php

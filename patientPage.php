@@ -63,7 +63,7 @@ if(empty($class4)){
 <input type="submit" class="button-submit-pat" id="edit-pat-info" value="Edit Patient Info"></input>
 <input type="submit" class="button-submit-pat" id="patient-history" value="Patient History"></input>
 <input type="submit" class="button-submit-pat" id="see-appoint" value="See Appointments"></input>
-<input type="submit" class="button-submit-pat" id="see-gallery" value="Image Gallery"></input>
+<a href="patientImages.php?<?='patient_id='?><?=$_GET['patient_id']?>"><input type="submit" class="button-submit-pat" id="patient_id" value="Image Gallery"></input></a>
 </div>
 
 <div id ="wad-manageMyInfo-page" class="wad-body-content">

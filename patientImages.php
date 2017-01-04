@@ -5,6 +5,7 @@ $_GET['class2'] = "wad-side-menu-button-active";
 $_GET['class3'] = "";
 $_GET['class4'] = "";
 include('templates/body.php');
+include('1_database_patients.php');
 ?>
 
 <div id ="wad-manageMyInfo-page" class="wad-body-content">
@@ -69,8 +70,8 @@ if(empty($class4)){
   <div class="wad-body-content-title-patient">Image Gallery</div>
   	<li style="list-style-type: none;">
 		<div class="patient">
-		<a href="#" class="img"><img src="files/img/00000000.png"/></a>
-		<a href="#" class="name">New Exam</a> 
+		<a href="newExam.php" class="img"><img src="files/img/00000000.png"/></a>
+		<a href="newExam.php" class="name">New Exam</a> 
 		</div>
 	</li>
   </div> 
