@@ -6,13 +6,16 @@ $_GET['class3'] = "";
 $_GET['class4'] = "";
 include('templates/body.php');
 include('1_database_patients.php');
+include('1_database_exams.php');
+
+$examsList = getPatientsExams($_GET['patient_id']);
 ?>
 
 <div id ="wad-manageMyInfo-page" class="wad-body-content">
   <div class="wad-body-content-title"><?php foreach ($patients as $patient){ echo $patient['first_name'];  echo ' '; echo $patient['last_name']; } ?>
 </div>
 
-<div class="wad-body-content-internal"> 
+<div class="wad-body-content-internal">
 <ul><div class="patient-photo">
 <a href="" class="img"><img src="files/img/patients/<?php foreach ($patients as $patient){ echo $patient['healthcare_id']; } ?>.jpg"/></a>
 </ul>
@@ -28,7 +31,7 @@ include('1_database_patients.php');
   		echo "Undefined";
   	}; ?></label><br/>
 <label>Birthday: <?php echo $patient['birth_date']; ?></label><br/>
-<label>Address: <?php echo $patient['door_number']; echo ' '; 
+<label>Address: <?php echo $patient['door_number']; echo ' ';
 					  echo $patient['street']; echo ', ';
 					  echo $patient['postal_code'];  echo ' ';
 					  echo $patient['city']; echo(', ');
@@ -68,13 +71,21 @@ if(empty($class4)){
 
 <div id ="wad-patientImages-page" class="wad-body-content">
   <div class="wad-body-content-title-patient">Image Gallery</div>
-  	<li style="list-style-type: none;">
-		<div class="patient">
-		<a href="newExam.php" class="img"><img src="files/img/00000000.png"/></a>
-		<a href="newExam.php" class="name">New Exam</a> 
-		</div>
-	</li>
-  </div> 
+  	<li style="list-style-type: none; float: left;">
+		  <div class="patient">
+		    <a href="newExam.php" class="img"><img src="files/img/00000000.png"/></a>
+		    <a href="newExam.php" class="name">New Exam</a>
+		  </div>
+	  </li>
+    <?php foreach ($examsList as $exam){?>
+    <li style="list-style-type: none; float:left;">
+  	  <div class="patient">
+  	    <a href="" class="img"><img src="files/img/exams/<?=$exam['exam_image']?>.png"/></a>
+  	    <a href="" class="name"><?=$exam['appointment_date']?></a>
+  	  </div>
+  	</li>
+    <?php } ?>
+  </div>
 
 </div>
 </div>
