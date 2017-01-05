@@ -27,7 +27,7 @@ function getAutoProb($gdHandle) {
 
   imagedestroy($gdHandle);
 
-  return ceil(((($totalBrightness / ($width * $height)) / 2.55)-20)*11);
+  return ceil(100-((($totalBrightness / ($width * $height)) / 2.55)-20)*11);
 }
 //======================================================================================
 
@@ -40,9 +40,9 @@ $image_name = date('Y_m_d_G_i_s');
 $im = imagecreatefrompng($_FILES['exam_image']['tmp_name']);
 $auto_prob = getAutoProb($im);
 
-if ($auto_prob >= 50){
+if ($auto_prob < 50){
   $auto_diag = 'Negative';
-} elseif ($auto_prob >= 35) {
+} elseif ($auto_prob < 65) {
   $auto_diag = 'Uncertain';
 } else {
   $auto_diag = 'Positive';
@@ -56,11 +56,11 @@ if ($result !== false) {
   $_SESSION['success_message'] = "Exam added succesfuly!";
   move_uploaded_file($_FILES['exam_image']['tmp_name'], 'files/img/exams/' . $image_name . '.png');
 
-  $stmt = $conn->prepare('SELECT MAX(id) FROM wad.exams')
+  $stmt = $conn->prepare('SELECT MAX(id) AS id FROM wad.exams');
   $stmt->execute();
   $new_exam_id = $stmt->fetchAll();
 
-  header ('Location: analyseExam.php?exam_id='.$new_exam_id);
+  header ('Location: analyseExam.php?exam_id='.$new_exam_id[0]['id']);
 }
 else {
   $_SESSION['error_message'] = "Exam submission failed!";

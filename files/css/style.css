@@ -443,6 +443,21 @@ input{
   padding: 10px;
   background:#555;
 }
+.wad-popup-submit{
+  max-width:20em;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom:10px;
+  padding: 10px;
+  background:#555;
+  border-style: none;
+  color:#ddd;
+}
+.wad-popup-title{
+  margin: 20px;
+  font-weight:bold;
+  font-size: 1.2em;
+}
 
 
 
