@@ -349,11 +349,24 @@ input{
 }
 .button-submit-pat{
   text-align: center;
-  width:24.6%;
+  width:50%;
   color: #919191;
   font-size:1em;
+  margin:10px;
+  padding:5px;
+  background-color: #eee;
+  text-align:center;
+  color:#333;
+  font-size: 0.9em;
 }
-
+.button-submit-pat-active{
+  background-color: #548235;
+  border-color: #548235;
+  text-align:center;
+  color:#E5E5E5;
+  width:24.6%;
+  font-size:1em;
+}
 
 .wad-side-menu{
   display: inline-block;
@@ -372,15 +385,7 @@ input{
   font-size: 0.9em;
 }
 
-.button-submit-pat-active{
-  background-color: #548235;
-  border-color: #548235;
-  text-align:center;
-  color:#E5E5E5;
-  width:24.6%;
 
-  font-size:1em;
-}
 .wad-body-content-title-patient{
   text-align: right;
   background: #eee;
