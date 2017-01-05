@@ -13,7 +13,29 @@
 </div>
 <div id="wad-doctor-delete-popup" class="wad-popup">
   <a class="wad-popup-icon" href="#" onclick="closePopUp('wad-doctor-delete-popup')"><i class="fa fa-times" aria-hidden="true"></i></a>
-  <div id="wad-doctor-delete-popup-name">Are you sure you want to delete your account?</div>
+  <div class="wad-popup-title">Are you sure you want to delete your account?</div>
+  <div class="wad-popup-button">Yes</div>
+  <div class="wad-popup-button">No</div>
+</div>
+<div id="wad-manualdiag-popup" class="wad-popup">
+  <a class="wad-popup-icon" href="#" onclick="closePopUp('wad-manualdiag-popup')"><i class="fa fa-times" aria-hidden="true"></i></a>
+  <div class="wad-popup-title">Set/change manual diagnosis</div>
+  <form action="0_action_new_manualdiag.php" id="manualdiag-form" method="POST">
+    Result:
+    <select name='manualdiag_result' class="input-box">
+        <option value="Positive">Positive</option>
+        <option value="Negative">Negative</option>
+        <option value="Uncertain">Uncertain</option>
+    </select><br><br>
+    Probability:
+    <input type="text" name="manualdiag_prob"></input><br><br>
+    <input type="hidden" name="exam_id" value="<?=$exam_id?>">
+    <input type="submit" class="wad-popup-submit"></input>
+  </form>
+</div>
+<div id="wad-observation-popup" class="wad-popup">
+  <a class="wad-popup-icon" href="#" onclick="closePopUp('wad-observation-popup')"><i class="fa fa-times" aria-hidden="true"></i></a>
+  <div class="wad-popup-title">Add new observation</div>
   <div class="wad-popup-button">Yes</div>
   <div class="wad-popup-button">No</div>
 </div>
