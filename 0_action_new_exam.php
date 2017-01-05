@@ -55,7 +55,12 @@ $result = $stmt->execute(array($image_name, $exam_date, $date_prescribed, $exam_
 if ($result !== false) {
   $_SESSION['success_message'] = "Exam added succesfuly!";
   move_uploaded_file($_FILES['exam_image']['tmp_name'], 'files/img/exams/' . $image_name . '.png');
-  header ('Location: myPatients.php');
+
+  $stmt = $conn->prepare('SELECT MAX(id) FROM wad.exams')
+  $stmt->execute();
+  $new_exam_id = $stmt->fetchAll();
+
+  header ('Location: analyseExam.php?exam_id='.$new_exam_id);
 }
 else {
   $_SESSION['error_message'] = "Exam submission failed!";

@@ -80,8 +80,8 @@ if(empty($class4)){
     <?php foreach ($examsList as $exam){?>
     <li style="list-style-type: none; float:left;">
   	  <div class="patient">
-  	    <a href="" class="img"><img src="files/img/exams/<?=$exam['exam_image']?>.png"/></a>
-  	    <a href="" class="name"><?=$exam['appointment_date']?></a>
+  	    <a href="analyseExam.php?exam_id=<?=$exam['id']?>" class="img"><img src="files/img/exams/<?=$exam['exam_image']?>.png"/></a>
+  	    <a href="analyseExam.php?exam_id=<?=$exam['id']?>" class="name"><?=$exam['appointment_date']?></a>
   	  </div>
   	</li>
     <?php } ?>

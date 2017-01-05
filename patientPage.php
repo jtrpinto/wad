@@ -12,7 +12,7 @@ include('1_database_patients.php');
   <div class="wad-body-content-title"><?php foreach ($patients as $patient){ echo $patient['first_name'];  echo ' '; echo $patient['last_name']; } ?>
 </div>
 
-<div class="wad-body-content-internal"> 
+<div class="wad-body-content-internal">
 <ul><div class="patient-photo">
 <a href="" class="img"><img src="files/img/patients/<?php foreach ($patients as $patient){ echo $patient['healthcare_id']; } ?>.jpg"/></a>
 </ul>
@@ -28,7 +28,7 @@ include('1_database_patients.php');
   		echo "Undefined";
   	}; ?></label><br/>
 <label>Birthday: <?php echo $patient['birth_date']; ?></label><br/>
-<label>Address: <?php echo $patient['door_number']; echo ' '; 
+<label>Address: <?php echo $patient['door_number']; echo ' ';
 					  echo $patient['street']; echo ', ';
 					  echo $patient['postal_code'];  echo ' ';
 					  echo $patient['city']; echo(', ');
@@ -72,47 +72,47 @@ if(empty($class4)){
   <div class="wad-body-content-internal-fields-patient">
   <form action="" method="POST"> <!--0_action_manageDoctorInfo.php-->
   <label class="input-text">First Name:</label><input type="text" name="first_name" class="input-box" placeholder="
-  <?php foreach ($patients as $patient) { echo  $patient['first_name']; } ; ?> 
+  <?php foreach ($patients as $patient) { echo  $patient['first_name']; } ; ?>
   "></label><br />
   <label class="input-text">Last Name:</label><input type="text" name="last_name" class="input-box" placeholder="
-  <?php foreach ($patients as $patient) { echo  $patient['last_name']; } ; ?> 
+  <?php foreach ($patients as $patient) { echo  $patient['last_name']; } ; ?>
   "></label><br />
   <label class="input-text">Healthcare ID:</label><input type="integer" name="healthcare_id" class="input-box" placeholder="
-  <?php foreach ($patients as $patient) { echo  $patient['healthcare_id']; } ; ?> 
+  <?php foreach ($patients as $patient) { echo  $patient['healthcare_id']; } ; ?>
   "></label><br />
   <label class="input-text">Birth Date:</label><input type="date" name="birth_date" class="input-box" placeholder="
-  <?php foreach ($patients as $patient) { echo  $patient['birth_date']; } ; ?> 
+  <?php foreach ($patients as $patient) { echo  $patient['birth_date']; } ; ?>
   "></label><br />
   <label class="input-text">Gender:</label>
   <input type="radio" name="gender" <?php if (isset($patient['gender']) && $patient['gender']=='f') echo "checked";?> value="Female">Female
   <input type="radio" name="gender" <?php if (isset($patient['gender']) && $patient['gender']=='m') echo "checked";?> value="Male">Male<br>
 
   <!--label class="input-text">Photo:</label><input type="text" name="photo" class="input-box" value="
-  <?php foreach ($patients as $patient) { echo  $patient['photo']; } ; ?> 
+  <?php foreach ($patients as $patient) { echo  $patient['photo']; } ; ?>
   "></label><br /-->
   </form>
-  </div> 
+  </div>
 
   <div class="wad-body-content-internal">Contact Information</div>
   <div class="wad-body-content-internal-fields-patient">
   <form action="0_action_manageDoctorInfo.php" method="POST">
   <label class="input-text">City:</label><input type="text" name="city" class="input-box" placeholder="
-  <?php foreach ($patients as $patient) { echo  $patient['city']; } ; ?> 
+  <?php foreach ($patients as $patient) { echo  $patient['city']; } ; ?>
   "></label><br />
   <label class="input-text">Street:</label><input type="text" name="street" class="input-box" placeholder="
-  <?php foreach ($patients as $patient) { echo  $patient['street']; } ; ?> 
+  <?php foreach ($patients as $patient) { echo  $patient['street']; } ; ?>
   "></label><br />
   <label class="input-text">Postal Code:</label><input type="integer" name="postal_code" class="input-box-half" placeholder="
-  <?php foreach ($patients as $patient) { echo  $patient['postal_code']; } ; ?> 
+  <?php foreach ($patients as $patient) { echo  $patient['postal_code']; } ; ?>
   "></label>
   <label class="input-text">Number:</label><input type="integer" name="number" class="input-box-half" placeholder="
-  <?php foreach ($patients as $patient) { echo  $patient['phone']; } ; ?> 
+  <?php foreach ($patients as $patient) { echo  $patient['phone']; } ; ?>
   "></label><br />
   <label class="input-text">Email:</label><input type="text" name="email" class="input-box" placeholder="
-  <?php foreach ($patients as $patient) { echo  $patient['email']; } ; ?> 
+  <?php foreach ($patients as $patient) { echo  $patient['email']; } ; ?>
   "></label><br />
   </form>
-  </div> 
+  </div>
   <input type="submit" class="button-submit" value="Save">
 </div>
 </div>

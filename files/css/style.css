@@ -193,6 +193,11 @@ footer{
   background:#eee;
   font-size:1.6em;
 }
+
+.wad-body-content-internal ul{
+  padding:0;
+}
+
 /*Componentes Manage My Info*/
 .wad-body-content-internal-fields{
   text-align: left;
@@ -283,12 +288,13 @@ input{
   margin-top: 20px;
 }
 .patients ul li{
-  width: 25%;
+  width: 20%;
+  min-width: 140px;
   margin-bottom: 10px;
 }
 .patient{
   float:left;
-  width: 90%;
+  width: 140px;
   /*background-color: white;*/
   border-radius: 30px;
   position: relative;
@@ -302,8 +308,8 @@ input{
   margin-top: 10px;
 }
 .patient a.img img{
-  height: 170px;
-  max-width: 100%;
+  height: 130px;
+  width: 130px;
   /*border-bottom: #BEBACE 5px solid;*/
   border-radius: 50%;
 }
@@ -318,26 +324,25 @@ input{
 /*======================== PATIENT ==========================================*/
 /*===========================================================================*/
 .patient-photo{
- width: 25%;
+ width: 20%;
+ min-width: 160px;
  float: left;
 }
 .patient-photo a.img img{
-  height: 170px;
-  max-width: 100%;
+  height: 150px;
+  width: 150px;
   /*border-bottom: #BEBACE 5px solid;*/
   border-radius: 50%;
 }
 .patient-info{
-  width: 75%;
+  display: inline-block;
   text-align: left;
   text-indent: 0em;
-  background:#ddd;
-  font-size:0.7em;
+  font-size:0.6em;
   color:#333;
-  margin-left: 25%;
 }
 .patient-info label{
-  width:95%;
+  width:120%;
   margin-top: 0em;
   margin-bottom: 0em;
   padding-top: 0.15em;
