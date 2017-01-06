@@ -71,6 +71,29 @@
   </form>
 </div>
 
+<div id="wad-newsymptom-popup" class="wad-popup">
+  <a class="wad-popup-icon" href="#" onclick="closePopUp('wad-newsymptom-popup')"><i class="fa fa-times" aria-hidden="true"></i></a>
+  <div class="wad-popup-title">Add new symptom</div>
+  <form action="0_action_new_symptom.php" id="newsymptom-form" method="POST">
+    Symptom:
+    <select name='symptom_id' class="input-box">
+      <?php foreach ($allSymptoms as $symptom){ ?>
+        <option value="<?=$symptom['id']?>"><?=$symptom['name']?> (<?=$symptom['description']?>)</option>
+      <?php } ?>
+    </select><br><br>
+    Place:
+    <input type="text" name="place"></input><br><br>
+    Description:
+    <input type="text" name="description"></input><br><br>
+    Start:
+    <input type="date" name="start_date"></input><br><br>
+    End:
+    <input type="date" name="end_date"></input><br><br>
+    <input type="hidden" name="patient_id" value="<?=$patient_id?>"></input>
+    <input type="submit" class="wad-popup-submit" value="Submit"></input>
+  </form>
+</div>
+
 <script src="files/js/scripts.js"></script>
 </body>
 </html>

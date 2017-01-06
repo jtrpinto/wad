@@ -10,6 +10,7 @@ include('1_database_exams.php');
 include('1_database_diagnoses.php');
 include('1_database_observations.php');
 include('1_database_treatments.php');
+include('1_database_symptoms.php');
 $_GET['classMenu1'] = "";
 $_GET['classMenu2'] = "button-submit-pat-active";
 $_GET['classMenu3'] = "";
@@ -23,6 +24,8 @@ $appList = getPatientsLatestAppointments($patient_id);
 $futAppList = getPatientsFutureAppointments($patient_id);
 $treatList = getPatientsTreatments($patient_id);
 $allTreatments = getAllTreatments();
+$allSymptoms = getAllSymptoms();
+$patSymptoms = getPatientsSymptoms($patient_id);
 ?>
 
 <br>
@@ -65,7 +68,16 @@ $allTreatments = getAllTreatments();
 
 <div class="wad-body-content-title">Current Symptoms</div>
 <div class="wad-body-content-box wad-darker-box">
-  (<a href="#">add new symptom</a>) (<a href="#">manage symptoms</a>)
+  <?php if(empty($patSymptoms)){echo 'No symptoms.';} ?>
+  <ul>
+  <?php foreach ($patSymptoms as $symp){ ?>
+      <li>
+        <b><?=$symp['name']?></b> (<?=$symp['description']?>)<br>
+        (place: <b><?=$symp['place']?></b>, from <?=$symp['start_date']?> to <?=$symp['end_date']?>)
+      </li>
+  <?php } ?>
+  </ul>
+  (<a href="#" onclick="openPopUp('wad-newsymptom-popup')">add new symptom</a>) (<a href="#">manage symptoms</a>)
 </div>
 
 <div class="wad-body-content-title">Latest Observations</div>
