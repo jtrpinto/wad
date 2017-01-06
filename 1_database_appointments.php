@@ -27,4 +27,15 @@ function selectFutureAppointments($appointmentsTotalInformation,$currentDate,$cu
 	}
 	return $futureApp;
 }
+
+function getPatientsLatestAppointments($pat_id){
+	global $conn;
+	$today = date('Y-m-d');
+
+	$stmt = $conn->prepare('SELECT * FROM wad.appointments WHERE appointments.patient_id = ? AND appointment_date <= ? ORDER BY appointment_date DESC, appointment_time DESC LIMIT 5');
+  $stmt->execute(array($pat_id, $today));
+  $appList = $stmt->fetchAll();
+
+  return $appList;
+}
 ?>
