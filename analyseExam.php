@@ -35,7 +35,7 @@ if(isset($exam_info[0]['medical_diag_id'])){
   <div class="wad-body-patient-menu">
     <a href="#" onclick="openPopUp('wad-manualdiag-popup')"><input type="submit" class="button-submit-pat" id="edit-pat-info" value="Manual Diagnosis"></input></a>
     <a href="#" onclick="openPopUp('wad-observation-popup')"><input type="submit" class="button-submit-pat" id="patient-history" value="Add Observation"></input></a>
-    <a href="patientPage.php?patient_id=<?=$exam_info[0]['patient_id']?>"><input type="submit" class="button-submit-pat" value="Patient Page"></input></a>
+    <a href="editPatientInfo.php?patient_id=<?=$exam_info[0]['patient_id']?>"><input type="submit" class="button-submit-pat" value="Patient Page"></input></a>
     <a href="patientImages.php?patient_id=<?=$exam_info[0]['patient_id']?>"><input type="submit" class="button-submit-pat" value="Back to Gallery"></input></a>
   </div>
   <div class="wad-body-content-box">
