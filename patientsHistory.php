@@ -9,6 +9,7 @@ include('1_database_patients.php');
 include('1_database_exams.php');
 include('1_database_diagnoses.php');
 include('1_database_observations.php');
+include('1_database_treatments.php');
 $_GET['classMenu1'] = "";
 $_GET['classMenu2'] = "button-submit-pat-active";
 $_GET['classMenu3'] = "";
@@ -19,12 +20,15 @@ $examsList = getPatientsExams($patient_id);
 $diagnosesList = getPatientsDiagnoses($patient_id);
 $obsList = getPatientsLatestObservations($patient_id);
 $appList = getPatientsLatestAppointments($patient_id);
+$futAppList = getPatientsFutureAppointments($patient_id);
+$treatList = getPatientsTreatments($patient_id);
 ?>
 
 <br>
 <div class="wad-body-content-title">Diagnosis Evolution</div>
-<div class="wad-body-content-box">
+<div class="wad-body-content-box wad-darker-box">
   <h4>Manual diagnoses:</h4>
+  <?php if(empty($diagnosesList)){echo 'No manual diagnoses.';} ?>
   <ul>
   <?php foreach ($diagnosesList as $diagnosis){ ?>
       <li>
@@ -34,6 +38,7 @@ $appList = getPatientsLatestAppointments($patient_id);
   <?php } ?>
   </ul>
   <h4>Automatic diagnoses:</h4>
+  <?php if(empty($examsList)){echo 'No automatic diagnoses.';} ?>
   <ul>
   <?php foreach ($examsList as $exam){ ?>
       <li>
@@ -45,32 +50,54 @@ $appList = getPatientsLatestAppointments($patient_id);
 </div>
 
 <div class="wad-body-content-title">Treatment History</div>
-<div class="wad-body-content-box">
-
+<div class="wad-body-content-box wad-darker-box">
+  <?php if(empty($treatList)){echo 'No treatments.';} ?>
+  <ul>
+  <?php foreach ($treatList as $treat){ ?>
+      <li>
+        <b><?=$treat['name']?> <?=$treat['dose']?></b> (<?=$treat['frequency']?>, from <?=$treat['start_date']?> to <?=$treat['end_date']?>)
+      </li>
+  <?php } ?>
+  </ul>
+    (<a href="#">manage treatments</a>)
 </div>
 
 <div class="wad-body-content-title">Current Symptoms</div>
-<div class="wad-body-content-box">
+<div class="wad-body-content-box wad-darker-box">
 
+</div>
+
+<div class="wad-body-content-title">Latest Observations</div>
+<div class="wad-body-content-box wad-darker-box">
+  <ul>
+    <?php foreach ($obsList as $obs){ ?>
+      <li>
+        <b><?=$obs['date_observations']?></b> - <?=$obs['notes']?>
+      </li>
+    <?php } ?>
+  </ul>
+  <?php if(empty($obsList)){echo 'No observations.<br>';} ?>
+  (<a href="#">see all observations</a>)
 </div>
 
 <div class="wad-half-body-division">
   <div class="wad-half-body-content">
-    <div class="wad-body-content-title">Latest Observations</div>
-      <div class="wad-body-content-box">
+    <div class="wad-body-content-title">Future Appointments</div>
+      <div class="wad-body-content-box wad-darker-box">
         <ul>
-          <?php foreach ($obsList as $obs){ ?>
+          <?php foreach ($futAppList as $futApp){ ?>
             <li>
-              <b><?=$obs['date_observations']?></b> - <?=$obs['notes']?>
+              <?=$futApp['appointment_time']?> <b><?=$futApp['appointment_date']?></b> - Room <?=$futApp['room']?>
             </li>
-          <?php } ?>
+            <?php } ?>
         </ul>
-        (<a href="#">see all observations</a>)
+        <?php if(empty($futAppList)){echo 'No future appointments.<br>';} ?>
+        (<a href="#">see all appointments</a>)
       </div>
     </div>
     <div class="wad-half-body-content">
       <div class="wad-body-content-title">Latest Appointments</div>
-      <div class="wad-body-content-box">
+      <div class="wad-body-content-box wad-darker-box">
         <ul>
           <?php foreach ($appList as $app){ ?>
             <li>
@@ -78,7 +105,7 @@ $appList = getPatientsLatestAppointments($patient_id);
             </li>
           <?php } ?>
         </ul>
-        (<a href="#">see all appointments</a>)
+        <?php if(empty($futAppList)){echo 'No past appointments.<br>';} ?>
       </div>
     </div>
   </div>
