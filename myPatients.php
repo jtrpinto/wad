@@ -5,8 +5,12 @@ $_GET['class2'] = "wad-side-menu-button-active";
 $_GET['class3'] = "";
 $_GET['class4'] = "";
 include('templates/body.php');
-$_GET['patient_id'] = "2"; // este patient está definido estaticamente...
+
+//$_GET['patient_id'] = "-1"; // este patient está definido estaticamente...
+//include('1_database_appointments.php')
 include('1_database_patients.php');
+//$patients_list = getAllPatients();
+//$patients = array();
 ?>
 
 <div id ="wad-manageMyInfo-page" class="wad-body-content">
@@ -47,6 +51,9 @@ include('1_database_patients.php');
    <input id="input_pfn" type="text" name="patient_first_name" class="input-box-half" placeholder="First Name">
    <input id="input_pln" type="text" name="patient_last_name" class="input-box-half" placeholder="Last Name">
    <input type="submit" class="button-submit" value="Go" onClick="search_by_name()">
+
+  <a href="allPatients.php"><input type="submit" class="button-submit-all" id="allPatients" value="View All Patients"></input></a>
+
 
 <div class="patients"><ul>
 	<li>
@@ -182,6 +189,14 @@ if (first_name!= '' && last_name != ''){
 
   changePatientList(resultName);
 }
+/*
+function search_all_patients(){
+  var patients_list = <?php echo json_encode($patient_list) ?>;
+
+  changePatientList(patient_list);
+  alert(JSON.stringify(<?php echo json_encode($patient_list) ?>));
+
+}*/
 
 </script>
 

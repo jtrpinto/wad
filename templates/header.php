@@ -29,11 +29,11 @@ include('1_database_doctors.php');
 ?>
 <body>
   <header>
-    <div id="wad-header-date-time"><b>
-    <?php echo date("l, d M, Y"); ?> 
-    </b><br>
-    <?php date_default_timezone_set("Portugal"); /*Saber se se faz a identificação automática das pessoas? ou faz-se default para PT */
-    echo date("H:i"); ?>
+    <div id="wad-header-date-time"><b><?php echo date("l, "); ?></b>
+    <b id='date'></b><br>
+    <b id='time' style="font-weight:normal"></b>
+    <?php /*date_default_timezone_set("Portugal"); /*Saber se se faz a identificação automática das pessoas? ou faz-se default para PT */
+    /*echo date("H:i"); */ ?>
     </div>
     <img id="wad-header-logo" src="files/img/WAD.png" height="60px" alt="WAD Logo">
     <div id="wad-header-doctor-info">
@@ -42,3 +42,24 @@ include('1_database_doctors.php');
       <img id="wad-header-doctor-pic" src="files/img/doctors/<?php foreach ($doctor_information as $doctorinfo) { echo  $doctorinfo['citizen_id']; } ; ?>.jpg" height="60px" alt="Doctor Picture" onclick="openPopUp('wad-doctor-popup')">
     </div>
   </header>
+<script type="text/javascript">
+  
+  function updateClock() {
+    var now = new Date(), // current date
+        //weekDay = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        months = ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']; // you get the idea
+        time = now.getHours() + ':' + now.getMinutes(), // again, you get the idea
+
+        // a cleaner way than string concatenation
+        date = [now.getDate(), 
+                months[now.getMonth()],
+                now.getFullYear()].join(' ');
+
+    // set the content of the element with the ID time to the formatted string
+    document.getElementById('date').innerHTML = [date].join(' ');
+    document.getElementById('time').innerHTML = [time].join(' ');
+    // call this function again in 1000ms
+    setTimeout(updateClock, 1000);
+}
+updateClock(); // initial call
+</script>
