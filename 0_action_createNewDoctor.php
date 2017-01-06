@@ -34,7 +34,8 @@ if (!isset($_SESSION['doctor_id'])) die;
     $result = $stmt->execute(array($first_name, $last_name, $birth_date, $gender, $phone, $citizen_id, $email, $speciality_id, $first_day_of_service, $is_active, sha1($password), $username, $country, $city, $street, $floor_app, $doornumber, $postal_code));
 
     if ($result !== false) {
-    $_SESSION['success_message'] = "Information updated succesfuly!";
+      $_SESSION['success_message'] = "Information updated succesfuly!";
+      move_uploaded_file($_FILES['photo']['tmp_name'], 'files/img/doctors/' . $citizen_id . '.jpg');
     } 
     else {
       $_SESSION['error_message'] = "Information update failed!"; 

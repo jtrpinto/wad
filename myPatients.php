@@ -51,7 +51,7 @@ include('1_database_patients.php');
 <div class="patients"><ul>
 	<li>
 		<div class="patient">
-		<a href="#" class="img"><img src="files/img/00000000.png"/></a>
+		<a href="createNewPatient.php" class="img"><img src="files/img/00000000.png"/></a>
 		<a href="#" class="name">New Patient</a> 
 		</div>
 	</li>
