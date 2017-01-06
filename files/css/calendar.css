@@ -59,6 +59,7 @@ div#calendar div.header a.next{
 div#calendar div.box-content{
     border:1px solid #FFF;
     border-top:none;
+    background-color: #FFF;
 }
 
 
@@ -109,7 +110,7 @@ div#calendar ul.dates li{
     width:70px;
     height:40px;
     font-size:1em;
-    background-color: #DDD;
+    background-color: #eee;
     color:#000;
     text-align:center;
 }
