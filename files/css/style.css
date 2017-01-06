@@ -236,12 +236,14 @@ label{
 input{
   display: inline-block;
 }
-.button-submit{
+.button-submit-edit{
   text-align: center;
   width:18.5%;
   color: #919191;
+  background-color: #eee;
   font-size:1em;
-  border-style: none;
+  border-style: solid;
+  border-color: #919191;
   border-radius: 0;
 }
 .wad-body{
@@ -320,6 +322,15 @@ input{
   text-decoration: none;
   margin-top: 10px;
 }
+.button-submit{
+  text-align: center;
+  width:18.5%;
+  color: #919191;
+  background-color: #ddd;
+  font-size:1em;
+  border-style: none;
+  border-radius: 0;
+}
 /*===========================================================================*/
 /*======================== PATIENT ==========================================*/
 /*===========================================================================*/
@@ -349,16 +360,19 @@ input{
 }
 .button-submit-pat{
   text-align: center;
+  background-color: #ddd;
+  border-style: none;
   width:24.6%;
   color: #919191;
   font-size:1em;
 }
 .button-submit-pat-active{
   background-color: #548235;
-  border-color: #548235;
+  border-style: none;
   text-align:center;
   color:#E5E5E5;
   width:24.6%;
+
   font-size:1em;
 }
 .wad-body-content-title-patient{
@@ -371,7 +385,7 @@ input{
   text-align: left;
   background:#eee;
   font-size:1.6em;
-  margin-right: 20px;s
+  margin-right: 20px;
 }
 .wad-body-content-internal-fields-patient{
   text-align: left;
