@@ -8,7 +8,8 @@ $doctor_id = $_SESSION["doctor_id"];
 		FROM wad.appointments AS a
 		JOIN wad.patients AS p ON p.id = a.patient_id
 		JOIN wad.doctors AS d ON d.id = a.doctor_id
-		WHERE doctor_id = ?');
+		WHERE doctor_id = ?
+		ORDER BY appointment_date ASC, appointment_time ASC');
 	$appointments_info->execute(array($doctor_id));
 	$appointments_info_doctor = $appointments_info->fetchAll();
 
@@ -18,7 +19,7 @@ $doctor_id = $_SESSION["doctor_id"];
 function selectFutureAppointments($appointmentsTotalInformation,$currentDate,$currentTime){
 	$futureApp = [];
 	foreach ($appointmentsTotalInformation as $appointment){
-		if ($appointment['appointment_date'] > $currentDate) {
+		if ($appointment['appointment_date'] > $currentDate && count($futureApp) < 10) {
 			$futureApp[] = $appointment;
 		}
 		elseif ($appointment['appointment_date'] == $currentDate && $appointment['appointment_time'] >= $currentTime) {

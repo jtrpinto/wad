@@ -20,4 +20,14 @@ function getSingleExamInfo($exam_id){
   return $examInfo;
 }
 
+function getRecentExams($doc_id){
+  global $conn;
+
+  $stmt = $conn->prepare('SELECT exams.id, exams.exam_date, patients.first_name, patients.last_name FROM wad.exams JOIN wad.appointments ON appointments.id = exams.appointments_id JOIN wad.patients ON patients.id = appointments.patient_id WHERE appointments.doctor_id = ? ORDER BY exam_date DESC LIMIT 10');
+  $stmt->execute(array($doc_id));
+  $examList = $stmt->fetchAll();
+
+  return $examList;
+}
+
 ?>
