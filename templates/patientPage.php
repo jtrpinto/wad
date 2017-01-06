@@ -1,3 +1,6 @@
+<?php $patient_id = $_GET['patient_id'];
+?>
+
 <div id ="wad-manageMyInfo-page" class="wad-body-content">
   <div class="wad-body-content-title"><?php foreach ($patients as $patient){ echo $patient['first_name'];  echo ' '; echo $patient['last_name']; } ?>
 </div>

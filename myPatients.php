@@ -28,11 +28,9 @@ include('1_database_patients.php');
      $appointmentsTotalInformation[$i]['patient_healthcare_id'] = $appointment['patient_healthcare_id'];
     $i++;
   }
-     //print_r($appointmentsTotalInformation);
-     //echo nl2br("\n");
-     //echo nl2br("\n");
  ?>
 
+<!-- Code with javascript -->
   <form><label class="input-text" name="ordered_by">Select list:</label>
    <select id = "ordered_by" class="input-box" onchange="mySelectChange(this.options[this.selectedIndex].value)">
      <option value="1">Last Appointment (Most Recent First)</option>
@@ -44,14 +42,11 @@ include('1_database_patients.php');
      <option value="7">Current Diagnosis (Negative First)</option>
    </select></form> <!--br /--> 
 
-   <!--form name="search_by_name" method="POST" action="0_action_search_by_name.php"-->
+<!-- Code with javascript -->
    <label id="teste" class="input-text">Search:</label>
    <input id="input_pfn" type="text" name="patient_first_name" class="input-box-half" placeholder="First Name">
    <input id="input_pln" type="text" name="patient_last_name" class="input-box-half" placeholder="Last Name">
    <input type="submit" class="button-submit" value="Go" onClick="search_by_name()">
-   <!--/form-->
-
-   
 
 <div class="patients"><ul>
 	<li>
@@ -59,16 +54,12 @@ include('1_database_patients.php');
 		<a href="#" class="img"><img src="files/img/00000000.png"/></a>
 		<a href="#" class="name">New Patient</a> 
 		</div>
-
 	</li>
 
 
 <label style="display: none;" id="label_id"><?php print_r($php_array);?></label>
-
 <div id="patient_list">
-
 </div>
-
 </ul></div>
 
 
@@ -80,9 +71,6 @@ include('1_database_patients.php');
 
   function mySelectChange(id){
     var array = <?php echo json_encode($appointmentsTotalInformation); ?>;
-    //alert (JSON.stringify(array));
-    //alert(id);
-
     var preordered = [];
     var finalordered = [];
     var ids_position = [];
@@ -92,8 +80,7 @@ include('1_database_patients.php');
       case '1':
         // Last Appointment (most recent first)
         preordered = array.sort(function(a,b){return a["date"] < b["date"]});
-        //alert (JSON.stringify(preordered)+"\n\n\n");
-
+        
         for(var i = 0; i < preordered.length; i++){
           var p_id = preordered[i]["patient_id"];
           if (jQuery.inArray(p_id, ids_position)==-1){
@@ -106,7 +93,6 @@ include('1_database_patients.php');
       case '2':
          // Last Appointment (least recent first)
         preordered = array.sort(function(a,b){return a["date"] < b["date"]});
-        //alert (JSON.stringify(preordered)+"\n\n\n");
 
         for(var i = 0; i < preordered.length; i++){
           var p_id = preordered[i]["patient_id"];
@@ -131,32 +117,24 @@ include('1_database_patients.php');
         alert("error");
         break;
     }
-//alert ("oi");
     changePatientList(ordenated);
   }
 function changePatientList(ordenated){
     var innerString = "";
 
     for(var i = 0; i < ordenated.length; i++){
-      //alert (i);
-
       innerString += '<li><div class="patient">' + 
     '<a href="editPatientInfo.php?patient_id=' + ordenated[i]["patient_id"] +'" class="img"><img src="files/img/patients/' + ordenated[i]["patient_healthcare_id"] + '.jpg"/></a>' + 
     '<a href="#" class="name">' + ordenated[i]["patient_fn"] + ' ' + ordenated[i]["patient_ln"] + '</a></div></li>';
     }
   
-    //alert(JSON.stringify(ordenated[0]));
     document.getElementById('patient_list').innerHTML = innerString;
-    //alert (JSON.stringify(ordenated));
-
   }
 
 function search_by_name(){
   var appointmentsTotalInformation = <?php echo json_encode($appointmentsTotalInformation); ?>;
   var first_name = document.getElementById('input_pfn').value;
   var last_name = document.getElementById('input_pln').value;
-  //alert (first_name + ' ' + last_name);
-
   var resultName = [];
   var ids_position = [];
  
@@ -169,7 +147,6 @@ if (first_name!= '' && last_name != ''){
           if (jQuery.inArray(p_id, ids_position)==-1){
             ids_position.push(p_id);
             resultName.push(appointmentsTotalInformation[i]);
-
           }
      } 
     }
@@ -203,7 +180,6 @@ if (first_name!= '' && last_name != ''){
     return;
   }
 
-  //alert (resultName);
   changePatientList(resultName);
 }
 

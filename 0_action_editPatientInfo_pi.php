@@ -4,14 +4,14 @@ include_once('config/init.php');
 if (!isset($_SESSION['doctor_id'])) die;
 
   $patient_id = $_POST['patient_id'];
-  $city = $_POST['city'];
-  $street = $_POST['street'];
-  $postal_code = $_POST['postal_code'];
-  $phone = $_POST['number'];
-  $email = $_POST['email'];
+  $first_name = $_POST['first_name'];
+  $last_name = $_POST['last_name'];
+  $healthcare_id = $_POST['healthcare_id'];
+  $birth_date = $_POST['birth_date'];
+  $gender = $_POST['gender'];
  
-  $stmt = $conn->prepare('UPDATE wad.patients SET city = ?, street = ?, postal_code = ?, phone = ?, email = ? WHERE id = ?');
-  $result = $stmt->execute(array($city, $street, $postal_code, $phone, $email, $patient_id));
+  $stmt = $conn->prepare('UPDATE wad.patients SET first_name = ?, last_name = ?, healthcare_id = ?, birth_date = ?, gender = ? WHERE id = ?');
+  $result = $stmt->execute(array($first_name, $last_name, $healthcare_id, $birth_date, $gender, $patient_id));
 
 if ($result !== false) {
     $_SESSION['success_message'] = "Information updated succesfuly!";

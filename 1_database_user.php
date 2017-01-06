@@ -1,11 +1,4 @@
 <?php
-/*
-  function createUser($username, $password) {
-    global $conn;  
-    
-    $stmt = $conn->prepare('INSERT INTO doctors VALUES (?, ?)');
-    $stmt->execute(array($username, $password));
-  }*/
 
   function verifyUser($username, $password) {
     global $conn;  
