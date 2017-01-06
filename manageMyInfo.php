@@ -23,14 +23,21 @@ include('templates/body.php');
       <!--label class="input-text">Photo:</label><input type="text" name="photo" class="input-box" value="
       <?php //echo $doctorinfo['photo']; ?> 
       "></label><br /-->
+      <label class="input-text">First Day of Service:</label><input type="date" name="first_day_of_service" class="input-box" placeholder="<?php echo $doctorinfo['first_day_of_service']; ?>" value="<?=$doctorinfo['first_day_of_service']?>" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" title="Can only have the form: YYYY-MM-DD!"></label><br />
+      <label class="input-text">Is Active:</label>
+      <input type="radio" name="is_active" <?php if (isset($doctorinfo['is_active']) && $doctorinfo['is_active']=='1') echo "checked";?> value="1">Yes
+      <input type="radio" name="is_active" <?php if (isset($doctorinfo['is_active']) && $doctorinfo['is_active']=='0') echo "checked";?> value="0">No<br>
       <input type="submit" class="button-submit-edit" value="Save">
     </form>
   </div> 
   <div class="wad-body-content-internal">Contact Information</div>
   <div class="wad-body-content-internal-fields">
     <form action="0_action_manageDoctorInfo_ci.php" method="POST">
+      <label class="input-text">Country:</label><input type="text" name="country" class="input-box"  placeholder="<?php echo $doctorinfo['country']; ?>" value="<?=$doctorinfo['country']?>" pattern="[A-Za-z,. ]+" title="Can only contain characters!"><br />
       <label class="input-text">City:</label><input type="text" name="city" class="input-box" placeholder="<?php echo $doctorinfo['city']; ?>" value="<?=$doctorinfo['city']?>" pattern="[A-Za-z,. ]+" title="Can only contain characters!"><br />
       <label class="input-text">Street:</label><input type="text" name="street" class="input-box" placeholder="<?php  echo $doctorinfo['street']; ?>" value="<?=$doctorinfo['street']?>" pattern="[A-Za-z,. ]+" title="Can only contain characters!"><br />
+      <label class="input-text">Floor Number:</label><input type="integer" name="floor_app" class="input-box-half" placeholder="<?php  echo $doctorinfo['floor_app']; ?>" value="<?=$doctorinfo['floor_app']?>" pattern="[A-Za-z0-9]{0-5}" title="Can only contain characters and integers!"></label>
+      <label class="input-text">Door Number:</label><input type="integer" name="doornumber" class="input-box-half"  placeholder="<?php  echo $doctorinfo['doornumber']; ?>" value="<?=$doctorinfo['doornumber']?>" pattern="[A-Za-z0-9]{0-5}" title="Can only contain characters and integers!"></label><br />
       <label class="input-text">Postal Code:</label><input type="integer" name="postal_code" class="input-box-half" placeholder="   <?php echo $doctorinfo['postal_code']; ?>" value="<?=$doctorinfo['postal_code']?>" pattern="[0-9]{5}" title="Can only contain precisely 5 integers!"></label>
       <label class="input-text">Number:</label><input type="integer" name="number" class="input-box-half" placeholder="<?php echo $doctorinfo['phone']; ?>" value="<?=$doctorinfo['phone']?>" pattern="[0-9]{9}" title="Can only contain precisely 9 integers!"></label><br />
       <label class="input-text">Email:</label><input type="text" name="email" class="input-box" placeholder="<?php echo $doctorinfo['email']; ?>" value="<?=$doctorinfo['email']?>" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}" title="Can only be simillar to the form: example@email.com!"></label><br />

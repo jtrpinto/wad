@@ -9,9 +9,12 @@ if (!isset($_SESSION['doctor_id'])) die;
   $citizen_id = $_POST['citizen_id'];
   $birth_date = $_POST['birth_date'];
   $gender = $_POST['gender'];
+  $first_day_of_service = $_POST['first_day_of_service'];
+  $is_active = $_POST['is_active'];
+
  
-  $stmt = $conn->prepare('UPDATE wad.doctors SET first_name = ?, last_name = ?, citizen_id = ?, birth_date = ?, gender = ? WHERE id = ?');
-  $result = $stmt->execute(array($first_name, $last_name, $citizen_id, $birth_date, $gender, $doctor_id));
+  $stmt = $conn->prepare('UPDATE wad.doctors SET first_name = ?, last_name = ?, citizen_id = ?, birth_date = ?, gender = ?, first_day_of_service = ?, is_active = ? WHERE id = ?');
+  $result = $stmt->execute(array($first_name, $last_name, $citizen_id, $birth_date, $gender, $first_day_of_servic, $is_active, $doctor_id));
 
 if ($result !== false) {
     $_SESSION['success_message'] = "Information updated succesfuly!";
