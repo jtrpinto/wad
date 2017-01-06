@@ -30,14 +30,20 @@
     Probability:
     <input type="text" name="manualdiag_prob"></input><br><br>
     <input type="hidden" name="exam_id" value="<?=$exam_id?>">
-    <input type="submit" class="wad-popup-submit"></input>
+    <input type="submit" class="wad-popup-submit" value="Submit"></input>
   </form>
 </div>
 <div id="wad-observation-popup" class="wad-popup">
   <a class="wad-popup-icon" href="#" onclick="closePopUp('wad-observation-popup')"><i class="fa fa-times" aria-hidden="true"></i></a>
   <div class="wad-popup-title">Add new observation</div>
-  <div class="wad-popup-button">Yes</div>
-  <div class="wad-popup-button">No</div>
+  <form action="0_action_new_observation.php" id="manualdiag-form" method="POST">
+    <textarea rows="4" cols="50" name="obs_text"></textarea><br><br>
+    Date:
+    <input class="input-box" type="date" name="obs_date"><br><br>
+    <input type="hidden" name="appointment_id" value="<?=$exam_info[0]['appointments_id']?>"></input>
+    <input type="hidden" name="exam_id" value="<?=$exam_id?>"></input>
+    <input type="submit" class="wad-popup-submit" value="Submit"></input>
+  </form>
 </div>
 <script src="files/js/scripts.js"></script>
 </body>
