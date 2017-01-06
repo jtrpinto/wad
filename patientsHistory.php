@@ -22,6 +22,7 @@ $obsList = getPatientsLatestObservations($patient_id);
 $appList = getPatientsLatestAppointments($patient_id);
 $futAppList = getPatientsFutureAppointments($patient_id);
 $treatList = getPatientsTreatments($patient_id);
+$allTreatments = getAllTreatments();
 ?>
 
 <br>
@@ -59,12 +60,12 @@ $treatList = getPatientsTreatments($patient_id);
       </li>
   <?php } ?>
   </ul>
-    (<a href="#">manage treatments</a>)
+  (<a href="#" onclick="openPopUp('wad-newtreatment-popup')">add new treatment</a>) (<a href="#">manage treatments</a>)
 </div>
 
 <div class="wad-body-content-title">Current Symptoms</div>
 <div class="wad-body-content-box wad-darker-box">
-
+  (<a href="#">add new symptom</a>) (<a href="#">manage symptoms</a>)
 </div>
 
 <div class="wad-body-content-title">Latest Observations</div>

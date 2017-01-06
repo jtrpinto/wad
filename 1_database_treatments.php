@@ -10,4 +10,15 @@ function getPatientsTreatments($pat_id){
   return $treatList;
 }
 
+
+function getAllTreatments(){
+  global $conn;
+
+	$stmt = $conn->prepare('SELECT * FROM wad.treatments');
+  $stmt->execute();
+  $allTreatments = $stmt->fetchAll();
+
+  return $allTreatments;
+}
+
 ?>

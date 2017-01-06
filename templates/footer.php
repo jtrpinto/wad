@@ -2,6 +2,7 @@
 <footer>
   &#169 Jo&atilde;o Ribeiro Pinto and Patr&iacute;cia Loureiro Rodrigues. Web Aided Diagnosis. Web Technologies. FEUP 2016.
 </footer>
+
 <div id="wad-doctor-popup" class="wad-popup">
   <a class="wad-popup-icon" href="#" onclick="closePopUp('wad-doctor-popup')"><i class="fa fa-times" aria-hidden="true"></i></a>
   <img id="wad-doctor-popup-pic" src="files/img/doctors/<?=$doctor_information[0]['citizen_id'];?>.jpg" height="150px" alt="Doctor Picture" onclick="openPopUp('wad-doctor-popup')">
@@ -9,14 +10,16 @@
   <a href="manageMyInfo.php" style="text-decoration: none"><div class="wad-popup-button">Manage My Info</div></a>
   <a href="#"onclick="openPopUp('wad-doctor-delete-popup')" style="text-decoration: none"><div class="wad-popup-button">Delete My Account</div></a>
   <a href="createNewDoctor.php" style="text-decoration: none"><div class="wad-popup-button">Create a New Doctor's Account</div></a>
-   <a href="0_action_logout.php" style="text-decoration: none"><div class="wad-popup-button">Log Out</div></a> <!--colocar antes do login o logout: ainda não está a funcionar...-->
+  <a href="0_action_logout.php" style="text-decoration: none"><div class="wad-popup-button">Log Out</div></a> <!--colocar antes do login o logout: ainda não está a funcionar...-->
 </div>
+
 <div id="wad-doctor-delete-popup" class="wad-popup">
   <a class="wad-popup-icon" href="#" onclick="closePopUp('wad-doctor-delete-popup')"><i class="fa fa-times" aria-hidden="true"></i></a>
   <div class="wad-popup-title">Are you sure you want to delete your account?</div>
   <div class="wad-popup-button">Yes</div>
   <div class="wad-popup-button">No</div>
 </div>
+
 <div id="wad-manualdiag-popup" class="wad-popup">
   <a class="wad-popup-icon" href="#" onclick="closePopUp('wad-manualdiag-popup')"><i class="fa fa-times" aria-hidden="true"></i></a>
   <div class="wad-popup-title">Set/change manual diagnosis</div>
@@ -33,6 +36,7 @@
     <input type="submit" class="wad-popup-submit" value="Submit"></input>
   </form>
 </div>
+
 <div id="wad-observation-popup" class="wad-popup">
   <a class="wad-popup-icon" href="#" onclick="closePopUp('wad-observation-popup')"><i class="fa fa-times" aria-hidden="true"></i></a>
   <div class="wad-popup-title">Add new observation</div>
@@ -45,6 +49,28 @@
     <input type="submit" class="wad-popup-submit" value="Submit"></input>
   </form>
 </div>
+
+<div id="wad-newtreatment-popup" class="wad-popup">
+  <a class="wad-popup-icon" href="#" onclick="closePopUp('wad-newtreatment-popup')"><i class="fa fa-times" aria-hidden="true"></i></a>
+  <div class="wad-popup-title">Add new treatment</div>
+  <form action="0_action_new_treatment.php" id="newtreatment-form" method="POST">
+    Treatment:
+    <select name='treatment_id' class="input-box">
+      <?php foreach ($allTreatments as $treatment){ ?>
+        <option value="<?=$treatment['id']?>"><?=$treatment['name']?> <?=$treatment['dose']?></option>
+      <?php } ?>
+    </select><br><br>
+    Frequency:
+    <input type="text" name="frequency"></input><br><br>
+    Start:
+    <input type="date" name="start_date"></input><br><br>
+    End:
+    <input type="date" name="end_date"></input><br><br>
+    <input type="hidden" name="patient_id" value="<?=$patient_id?>"></input>
+    <input type="submit" class="wad-popup-submit" value="Submit"></input>
+  </form>
+</div>
+
 <script src="files/js/scripts.js"></script>
 </body>
 </html>
