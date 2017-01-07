@@ -15,14 +15,18 @@ $appointments_list = getPatientsAppointments($_GET['patient_id']);
 
 <a href="#" onclick="openPopUp('wad-newappointment-pat-popup')" ><input type="submit" name="addApp" class="button-submit-pat-new" value="Add New Appointment"></a>
 
-<form action="" method="get">
+<form action="" method="post">
 <label class="go-to-search-a">Search From:</label>
 <input type="date" name="start_date" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" title="Can only have the form: YYYY-MM-DD!">
 <label class="go-to-search-b">To:</label>
 <input type="date" name="end_date" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" title="Can only have the form: YYYY-MM-DD!">
-<a href="mySchedule.php?month=<?=$_GET['start_date']?>&year=<?=$_GET['end_date']?>"><input type="submit" name="search" class="submit-go-to-a" value="Go"></a>
-</form> <br />
-
+<input type="submit" name="search" class="submit-go-to-a" value="Go">
+</form> 
+<?php
+if(isset($_POST["start_date"]) && isset($_POST["end_date"])){
+	$appointments_list = getAppointmentsByDate($_GET['patient_id'], $_POST['start_date'], $_POST['end_date']);
+}
+?>
 <div id ="wad-manageMyInfo-page" class="wad-body-content">
   <div class="wad-body-content-internal-app">Appointments:</div>
 </div>
@@ -37,6 +41,7 @@ SPECIALITY: Osteoporosis<br />
 <?php }; ?>
 
 </div>
+
 
 <?php
 include('templates/footer.php');
