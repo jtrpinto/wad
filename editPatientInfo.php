@@ -8,7 +8,8 @@ include('templates/body.php');
 
 $patient_id = $_GET['patient_id'];
 $_GET['patient_id'] = $patient_id;
-include('1_database_patients.php');
+
+
 $_GET['classMenu1'] = "button-submit-pat-active";
 $_GET['classMenu2'] = "";
 $_GET['classMenu3'] = "";
@@ -30,11 +31,11 @@ include('templates/patientPage.php');
       <input type="radio" name="gender" <?php if (isset($patient['gender']) && $patient['gender']=='f') echo "checked";?> value="f">Female
       <input type="radio" name="gender" <?php if (isset($patient['gender']) && $patient['gender']=='m') echo "checked";?> value="m">Male<br>
       <!--label class="input-text">Photo:</label><input type="text" name="photo" class="input-box" value="
-      <?php //echo $patient['photo']; ?> 
+      <?php //echo $patient['photo']; ?>
       "></label><br /-->
       <input type="submit" class="button-submit-edit" value="Save">
     </form>
-  </div> 
+  </div>
 
   <div class="wad-body-content-internal">Contact Information</div>
   <div class="wad-body-content-internal-fields">
@@ -50,7 +51,7 @@ include('templates/patientPage.php');
       <label class="input-text">Email:</label><input type="text" name="email" class="input-box" placeholder="<?php echo $patient['email']; ?>" value="<?=$patient['email']?>" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}" title="Can only be simillar to the form: example@email.com!"></label><br />
       <input type="submit" class="button-submit-edit" value="Save">
     </form>
-  </div> 
+  </div>
 </div>
 </div>
 
