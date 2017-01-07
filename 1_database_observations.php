@@ -30,4 +30,13 @@ function getSingleObservationInfo($obs_id){
   return $obsInfo;
 }
 
+function getAppointmentObservations($app_id){
+  global $conn;
+
+  $stmt = $conn->prepare('SELECT * FROM wad.observations WHERE observations.appointment_id = ?');
+  $stmt->execute(array($app_id));
+  $obsList = $stmt->fetchAll();
+
+  return $obsList;
+}
 ?>

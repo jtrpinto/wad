@@ -135,7 +135,7 @@ $patSymptoms = getPatientsSymptoms($patient_id);
             <?php } ?>
         </ul>
         <?php if(empty($futAppList)){echo 'No future appointments.<br>';} ?>
-        <a href="#" title="See all appointments"><i class="fa fa-external-link-square" aria-hidden="true"></i> see all appointments</a>
+        <a href="seeApointments.php?patient_id=<?=$patient_id?>" title="See all appointments"><i class="fa fa-external-link-square" aria-hidden="true"></i> see all appointments</a>
       </div>
     </div>
     <div class="wad-half-body-content">

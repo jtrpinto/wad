@@ -30,4 +30,14 @@ function getRecentExams($doc_id){
   return $examList;
 }
 
+function getAppointmentExams($app_id){
+  global $conn;
+
+  $stmt = $conn->prepare('SELECT * FROM wad.exams WHERE appointments_id = ? ORDER BY exam_date DESC');
+  $stmt->execute(array($app_id));
+  $examList = $stmt->fetchAll();
+
+  return $examList;
+}
+
 ?>

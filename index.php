@@ -27,15 +27,18 @@ $recentExams = getRecentExams($doctor_id);
           <?php if(empty($futureAppointments)){echo 'No future appointments found.';}?>
           <ul>
             <?php foreach ($futureAppointments as $appointment) { ?>
-              <li><b>
+            <li>
               Room <?=$appointment['room'];?>
-              <?=$appointment['appointment_time'];?></b>
+              <b><?=$appointment['appointment_time'];?></b>
               <?=$appointment['appointment_date'];?>
               <a href="patientsHistory.php?patient_id=<?=$appointment['patient_id']?>">
               <?=$appointment['first_name_patient'];?>
-              <?=$appointment['last_name_patient'];?></a></li>
+              <?=$appointment['last_name_patient'];?></a>
+              <a href="appointmentDetails.php?patient_id=<?=$appointment['patient_id']?>&app_id=<?=$appointment['id']?>" title="See details"><i class="fa fa-external-link-square" aria-hidden="true"></i></a></li>
+            </li>
             <?php };?>
           </ul>
+          <a href="mySchedule.php" title="See schedule"><i class="fa fa-external-link-square" aria-hidden="true"></i> see schedule</a>
         </div>
       </div>
       <div class="wad-half-body-content">
@@ -45,7 +48,7 @@ $recentExams = getRecentExams($doctor_id);
           <ul>
             <?php foreach ($recentExams as $exam) { ?>
               <li> <?=$exam['exam_date']?> <b><?=$exam['first_name']?> <?=$exam['last_name']?></b>
-              (<a href="analyseExam.php?exam_id=<?=$exam['id']?>">see exam</a>)</li>
+              <a href="analyseExam.php?exam_id=<?=$exam['id']?>" title="See exam"><i class="fa fa-external-link-square" aria-hidden="true"></i></a></li>
             <?php };?>
           </ul>
         </div>

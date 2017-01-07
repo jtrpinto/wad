@@ -60,4 +60,14 @@ function getPatientsAppointments($pat_id){
 
   return $appList;
 }
+
+function getSingleAppointmentInfo($app_id){
+	global $conn;
+
+	$stmt = $conn->prepare('SELECT appointments.id, appointment_date, appointment_time, room, doctor_id, patient_id, doctors.first_name AS doc_fname, doctors.last_name AS doc_lname, patients.first_name AS pat_fname, patients.last_name AS pat_lname FROM wad.appointments JOIN wad.doctors ON doctors.id = appointments.doctor_id JOIN wad.patients ON patients.id = appointments.patient_id WHERE appointments.id = ?');
+  $stmt->execute(array($app_id));
+  $appInfo = $stmt->fetchAll();
+
+  return $appInfo[0];
+}
 ?>

@@ -29,10 +29,10 @@ $appointments_list = getPatientsAppointments($_GET['patient_id']);
 <?php foreach ($appointments_list as $appointment) { ?>
 <div class="appointment-class">
 <a href="#" class="app"></a>
-DATE: <?php echo $appointment['appointment_date'];?><br />
-TIME: <?php echo $appointment['appointment_time'];?><br />
-ROOM: <?php echo $appointment['room'];?><br />
-SPECIALITY: Osteoporosis<br />
+Date: <?php echo $appointment['appointment_date'];?><br />
+Time: <?php echo $appointment['appointment_time'];?><br />
+Room: <?php echo $appointment['room'];?><br />
+Speciality: Osteoporosis<br />
 <a href="appointmentDetails.php?patient_id=<?=$_GET['patient_id']?>&app_id=<?=$appointment['id']?>" class="name">See More Details</a></div>
 <?php }; ?>
 
