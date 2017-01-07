@@ -8,7 +8,6 @@ include('templates/body.php');
 include_once('templates/calendar.php');
 
 include('1_database_exams.php');
-include('1_database_patients.php');
 $futureAppointments = selectFutureAppointments($appointments_info_doctor,$currentDate,$currentTime);
 /*$month = array('0' => 'January',
                      '1' => 'February',
