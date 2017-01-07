@@ -83,6 +83,7 @@ $currentTime = date('H:i:s');
     switch (id){
       case '1':
         // Last Appointment (most recent first)
+        array = lastAppointment(array);
         preordered = array.sort(function(a,b){return a["date"] < b["date"]});
 
         for(var i = 0; i < preordered.length; i++){
@@ -96,7 +97,9 @@ $currentTime = date('H:i:s');
         break;
       case '2':
          // Last Appointment (least recent first)
+        array = lastAppointment(array);
         preordered = array.sort(function(a,b){return a["date"] < b["date"]});
+        
         //alert(JSON.stringify(preordered));
         for(var i = 0; i < preordered.length; i++){
           var p_id = preordered[i]["patient_id"];
@@ -107,10 +110,11 @@ $currentTime = date('H:i:s');
         }
         ordenated= finalordered.sort(function(a,b){return b["date"] < a["date"]});
 
-        ordenated = lastAppointment(ordenated);
+        //ordenated = lastAppointment(ordenated);
         break;
       case '3':
         // Future Appointment (Nearest First)
+        array = futureAppointment(array);
         preordered = array.sort(function(a,b){return a["date"] < b["date"]});
         for(var i = 0; i < preordered.length; i++){
           var p_id = preordered[i]["patient_id"];
@@ -120,7 +124,7 @@ $currentTime = date('H:i:s');
           }
         }
         ordenated= finalordered.sort(function(a,b){return b["date"] < a["date"]});
-        ordenated = futureAppointment(ordenated);
+        //ordenated = futureAppointment(ordenated);
         break;
       case '4':
       // Last Name (Ascending)

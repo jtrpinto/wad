@@ -61,6 +61,7 @@ function getPatientsAppointments($pat_id){
   return $appList;
 }
 
+<<<<<<< HEAD
 function getSingleAppointmentInfo($app_id){
 	global $conn;
 
@@ -69,5 +70,15 @@ function getSingleAppointmentInfo($app_id){
   $appInfo = $stmt->fetchAll();
 
   return $appInfo[0];
+=======
+function getAppointmentsByDate($pat_id, $start_date, $end_date){
+	global $conn;
+	$stmt = $conn->prepare('SELECT * FROM appointments WHERE patient_id = ? AND appointment_date > ? AND appointment_date < ?
+		ORDER BY appointment_date DESC, appointment_time DESC ' );
+	$stmt->execute(array($pat_id, $start_date, $end_date));
+	$appointments_list = $stmt->fetchAll();
+
+	return $appointments_list;
+>>>>>>> origin/master
 }
 ?>
