@@ -94,7 +94,7 @@ $patSymptoms = getPatientsSymptoms($patient_id);
     <?php } ?>
   </ul>
   <?php if(empty($obsList)){echo 'No observations.<br>';} ?>
-  <a href="#" title="See all observations"><i class="fa fa-external-link-square" aria-hidden="true"></i> see all observations</a>
+  <a href="seeObservations.php?patient_id=<?=$patient_id?>" title="See all observations"><i class="fa fa-external-link-square" aria-hidden="true"></i> see all observations</a>
 </div>
 
 <div class="wad-half-body-division">
