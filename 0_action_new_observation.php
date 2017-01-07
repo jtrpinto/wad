@@ -6,7 +6,6 @@ if (!$_SESSION['doctor_id']) {
   die(header("Location: myLogin.php"));
 }
 
-$exam_id = $_POST['exam_id'];
 $appointment_id = $_POST['appointment_id'];
 $obs_text = $_POST['obs_text'];
 $obs_date = $_POST['obs_date'];
@@ -22,5 +21,9 @@ else {
   $_SESSION['error_message'] = "Observation submission failed!";
 }
 
-header ('Location: analyseExam.php?exam_id='.$exam_id);
+if (isset($_POST['exam_id'])){
+  header ('Location: analyseExam.php?exam_id='.$_POST['exam_id']);
+} else {
+  header ('Location: seeObservations.php?patient_id='.$_POST['patient_id']);
+}
 ?>

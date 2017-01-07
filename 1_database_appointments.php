@@ -50,4 +50,14 @@ function getPatientsFutureAppointments($pat_id){
 
   return $futAppList;
 }
+
+function getPatientsAppointments($pat_id){
+	global $conn;
+
+	$stmt = $conn->prepare('SELECT * FROM wad.appointments WHERE appointments.patient_id = ? ORDER BY appointment_date DESC, appointment_time DESC');
+  $stmt->execute(array($pat_id));
+  $appList = $stmt->fetchAll();
+
+  return $appList;
+}
 ?>

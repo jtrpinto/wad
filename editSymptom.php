@@ -21,11 +21,11 @@ $symptomInfo = getSingleSymptomInfo($symptom_id, $patient_id);
       <input type="hidden" name="patient_id" value="<?=$patient_id?>"></input>
       <input type="hidden" name="symptom_id" value="<?=$symptom_id?>"></input>
       Start date:
-      <input type="date" name="start_date" placeholder="<?=$symptomInfo[0]['start_date']?>" value="<?=$symptomInfo[0]['start_date']?>"></input><br><br>
+      <input class="input-box" type="date" name="start_date" placeholder="<?=$symptomInfo[0]['start_date']?>" value="<?=$symptomInfo[0]['start_date']?>"></input><br><br>
       End date:
-      <input type="date" name="end_date" placeholder="<?=$symptomInfo[0]['end_date']?>" value="<?=$symptomInfo[0]['end_date']?>"></input><br><br>
+      <input class="input-box" type="date" name="end_date" placeholder="<?=$symptomInfo[0]['end_date']?>" value="<?=$symptomInfo[0]['end_date']?>"></input><br><br>
       Place:
-      <input type="text" name="place" placeholder="<?=$symptomInfo[0]['place']?>" value="<?=$symptomInfo[0]['place']?>"></input><br><br>
+      <input class="input-box" type="text" name="place" placeholder="<?=$symptomInfo[0]['place']?>" value="<?=$symptomInfo[0]['place']?>"></input><br><br>
       Description:
       <textarea rows="4" cols="50" name="description" placeholder="<?=$symptomInfo[0]['description']?>"><?=$symptomInfo[0]['description']?></textarea><br><br>
       <input type="submit" class="button-submit-edit" value="Save">

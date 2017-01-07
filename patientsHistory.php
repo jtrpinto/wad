@@ -122,7 +122,7 @@ $patSymptoms = getPatientsSymptoms($patient_id);
             </li>
           <?php } ?>
         </ul>
-        <?php if(empty($futAppList)){echo 'No past appointments.<br>';} ?>
+        <?php if(empty($appList)){echo 'No past appointments.<br>';} ?>
       </div>
     </div>
   </div>

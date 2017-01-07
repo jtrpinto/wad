@@ -50,6 +50,24 @@
   </form>
 </div>
 
+<div id="wad-newobservation-popup" class="wad-popup">
+  <a class="wad-popup-icon" href="#" onclick="closePopUp('wad-newobservation-popup')"><i class="fa fa-times" aria-hidden="true"></i></a>
+  <div class="wad-popup-title">Add new observation</div>
+  <form action="0_action_new_observation.php" id="manualdiag-form" method="POST">
+    <textarea rows="4" cols="50" name="obs_text"></textarea><br><br>
+    Date:
+    <input class="input-box" type="date" name="obs_date"><br><br>
+    Appointment:
+    <select name='appointment_id' class="input-box">
+      <?php foreach ($patApps as $app){ ?>
+        <option value="<?=$app['id']?>"><?=$app['appointment_date']?> - <?=$app['appointment_time']?></option>
+      <?php } ?>
+    </select><br><br>
+    <input type="hidden" name="patient_id" value="<?=$patient_id?>"></input>
+    <input type="submit" class="wad-popup-submit" value="Submit"></input>
+  </form>
+</div>
+
 <div id="wad-newtreatment-popup" class="wad-popup">
   <a class="wad-popup-icon" href="#" onclick="closePopUp('wad-newtreatment-popup')"><i class="fa fa-times" aria-hidden="true"></i></a>
   <div class="wad-popup-title">Add new treatment</div>

@@ -21,11 +21,11 @@ $treatmentInfo = getSingleTreatmentInfo($treatment_id, $patient_id);
       <input type="hidden" name="patient_id" value="<?=$patient_id?>"></input>
       <input type="hidden" name="treatment_id" value="<?=$treatment_id?>"></input>
       Start date:
-      <input type="date" name="start_date" placeholder="<?=$treatmentInfo[0]['start_date']?>" value="<?=$treatmentInfo[0]['start_date']?>"></input><br><br>
+      <input class="input-box" type="date" name="start_date" placeholder="<?=$treatmentInfo[0]['start_date']?>" value="<?=$treatmentInfo[0]['start_date']?>"></input><br><br>
       End date:
-      <input type="date" name="end_date" placeholder="<?=$treatmentInfo[0]['end_date']?>" value="<?=$treatmentInfo[0]['end_date']?>"></input><br><br>
+      <input class="input-box" type="date" name="end_date" placeholder="<?=$treatmentInfo[0]['end_date']?>" value="<?=$treatmentInfo[0]['end_date']?>"></input><br><br>
       Frequency:
-      <input type="text" name="frequency" placeholder="<?=$treatmentInfo[0]['frequency']?>" value="<?=$treatmentInfo[0]['frequency']?>"></input><br><br>
+      <input class="input-box" type="text" name="frequency" placeholder="<?=$treatmentInfo[0]['frequency']?>" value="<?=$treatmentInfo[0]['frequency']?>"></input><br><br>
       <input type="submit" class="button-submit-edit" value="Save">
     </form>
   </div>
