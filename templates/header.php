@@ -44,11 +44,18 @@ include('1_database_patients.php');
   </header>
 <script type="text/javascript">
 
+  function addZero(i) {
+    if (i < 10) {
+      i = "0" + i;
+    }
+    return i;
+  }
+
   function updateClock() {
     var now = new Date(),
 
         months = ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-        time = now.getHours() + ':' + now.getMinutes(),
+        time = now.getHours() + ':' + addZero(now.getMinutes()),
 
         date = [now.getDate(),
                 months[now.getMonth()],
