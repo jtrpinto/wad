@@ -91,7 +91,7 @@ $patSymptoms = getPatientsSymptoms($patient_id);
   <?php } ?>
   </ul>
   <a href="#" onclick="openPopUp('wad-newtreatment-popup')" title="Add new treatment"><i class="fa fa-plus-circle" aria-hidden="true"></i> add new treatment</a><br>
-  <a href="#" onclick="openPopUp('wad-newtreatment-popup')" title="Create new treatment type"><i class="fa fa-plus-circle" aria-hidden="true"></i> create new treatment type</a>
+  <a href="#" onclick="openPopUp('wad-newtreatmenttype-popup')" title="Create new treatment type"><i class="fa fa-plus-circle" aria-hidden="true"></i> create new treatment type</a>
 </div>
 
 <div class="wad-body-content-title">Current Symptoms</div>
@@ -108,7 +108,7 @@ $patSymptoms = getPatientsSymptoms($patient_id);
   <?php } ?>
   </ul>
   <a href="#" onclick="openPopUp('wad-newsymptom-popup')" title="Add new symptom"><i class="fa fa-plus-circle" aria-hidden="true"></i> add new symptom</a><br>
-  <a href="#" onclick="openPopUp('wad-newsymptom-popup')" title="Create new symptom type"><i class="fa fa-plus-circle" aria-hidden="true"></i> create new symptom type</a>
+  <a href="#" onclick="openPopUp('wad-newsymptomtype-popup')" title="Create new symptom type"><i class="fa fa-plus-circle" aria-hidden="true"></i> create new symptom type</a>
 </div>
 
 <div class="wad-body-content-title">Latest Observations</div>

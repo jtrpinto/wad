@@ -116,7 +116,7 @@
   <a class="wad-popup-icon" href="#" onclick="closePopUp('wad-newappointment-popup')"><i class="fa fa-times" aria-hidden="true"></i></a>
   <div class="wad-popup-title">Add New Appointment</div>
   <form action="0_action_new_appointment.php" id="newappointment-form" method="POST">
-  <?php include('1_database_patients.php');
+  <?php 
       $patients_list = getAllPatients(); ?>
     Patient:
     <select name='patient_id' class="input-box">
@@ -133,7 +133,34 @@
     <input type="time" name="appointment_time" pattern="[0-9]{2}:[0-9]{2}:[0-9]{2}" title="Can only have the form: hh:mm:ss!"></input><br><br>
     Room:
     <input type="text" name="roomApp"></input><br><br>
-    </input>
+    <input type="submit" class="wad-popup-submit" value="Submit"></input>
+  </form>
+</div>
+
+<div id="wad-newsymptomtype-popup" class="wad-popup">
+  <a class="wad-popup-icon" href="#" onclick="closePopUp('wad-newsymptomtype-popup')"><i class="fa fa-times" aria-hidden="true"></i></a>
+  <div class="wad-popup-title">Add new symptom type</div>
+  <form action="0_action_new_symptom_type.php" id="newsymptomtype-form" method="POST">
+    Name:
+    <input type="text" name="name"></input><br><br>
+    Description:
+    <textarea rows="4" cols="50" name="description"></textarea><br><br>
+    <input type="hidden" name="patient_id" value="<?=$patient_id?>"></input>
+    <input type="submit" class="wad-popup-submit" value="Submit"></input>
+  </form>
+</div>
+
+<div id="wad-newtreatmenttype-popup" class="wad-popup">
+  <a class="wad-popup-icon" href="#" onclick="closePopUp('wad-newtreatmenttype-popup')"><i class="fa fa-times" aria-hidden="true"></i></a>
+  <div class="wad-popup-title">Add new treatment type</div>
+  <form action="0_action_new_treatment_type.php" id="newtreatmenttype-form" method="POST">
+    Name:
+    <input type="text" name="name"></input><br><br>
+    Dose:
+    <input type="text" name="dose"></input><br><br>
+    Type of treatment:
+    <input type="text" name="treat_type"></input><br><br>
+    <input type="hidden" name="patient_id" value="<?=$patient_id?>"></input>
     <input type="submit" class="wad-popup-submit" value="Submit"></input>
   </form>
 </div>
