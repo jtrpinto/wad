@@ -26,6 +26,7 @@ $appointmentsList = $appointments_info->fetchAll();
   <br>
   <div class="wad-body-content-box">
     <form id="patient_select_form" method="POST">
+      <h4>Please choose a patient before filling the rest of the form</h4>
       Patient:
       <select name='pat-id' class="input-box">
         <?php foreach ($patientList as $patient) {?>

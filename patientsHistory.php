@@ -31,6 +31,31 @@ $patSymptoms = getPatientsSymptoms($patient_id);
 <br>
 <div class="wad-body-content-title">Diagnosis Evolution</div>
 <div class="wad-body-content-box wad-darker-box">
+  <svg height="140" width="100%">
+    <?php $xx=20; $totalPts=count($examsList);?>
+    <path id="graph-auto"
+    d="M<?php for($i = $totalPts-1; $i >= 0; $i--){
+      $yy=120-$examsList[$i]['auto_probability'];
+      echo $xx.' '.$yy.' ';
+      if($i!=0){
+        $xx+=50;
+        echo 'L';
+      }}?>"
+    stroke="#548235" stroke-width="3" fill="none" />
+    <g stroke="#548235" stroke-width="3" fill="#548235">
+      <?php foreach ($examsList as $exam){ ?>
+        <circle cx="<?=$xx?>" cy="<?=120-$exam['auto_probability']?>" r="2" />
+      <?php $xx -= 50;} ?>
+    </g>
+    <g font-size="12" font-weight="bold" fill="black" stroke="none" text-anchor="middle">
+      <?php $xx+=($totalPts*50);
+        foreach ($examsList as $exam){ ?>
+        <text x="<?=$xx?>" y="<?=120-$exam['auto_probability']?>" dy="20"><?=$exam['auto_probability'].'%'?></text>
+      <?php $xx-=50; } ?>
+    </g>
+  </svg>
+  <br>
+
   <h4>Manual diagnoses:</h4>
   <?php if(empty($diagnosesList)){echo 'No manual diagnoses.';} ?>
   <ul>
@@ -65,7 +90,8 @@ $patSymptoms = getPatientsSymptoms($patient_id);
       </li>
   <?php } ?>
   </ul>
-  <a href="#" onclick="openPopUp('wad-newtreatment-popup')" title="Add new treatment"><i class="fa fa-plus-circle" aria-hidden="true"></i> add new treatment</a>
+  <a href="#" onclick="openPopUp('wad-newtreatment-popup')" title="Add new treatment"><i class="fa fa-plus-circle" aria-hidden="true"></i> add new treatment</a><br>
+  <a href="#" onclick="openPopUp('wad-newtreatment-popup')" title="Create new treatment type"><i class="fa fa-plus-circle" aria-hidden="true"></i> create new treatment type</a>
 </div>
 
 <div class="wad-body-content-title">Current Symptoms</div>
@@ -76,12 +102,13 @@ $patSymptoms = getPatientsSymptoms($patient_id);
       <li>
         <b><?=$symp['name']?></b> (<?=$symp['description']?>)<br>
         (place: <b><?=$symp['place']?></b>, from <?=$symp['start_date']?> to <?=$symp['end_date']?>)
-        <a href="editSymptom.php?patient_id=<?=$patient_id?>&symptom_id=<?=$symp['id']?>" title="Edit symptom"><i class="fa fa-pencil-square" aria-hidden="true"></i></a>
+        <a href="editSymptom.php?patient_id=<?=$patient_id?>&symptom_id=<?=$symp['id']?>" title="Edit symptom"><i class="fa fa-pencil-square" aria-hidden="true"></i></a><br>
         <a href="0_action_delete_symptom.php?patient_id=<?=$patient_id?>&symptom_id=<?=$symp['id']?>" title="Delete symptom"><i class="fa fa-window-close" aria-hidden="true"></i></a>
       </li>
   <?php } ?>
   </ul>
   <a href="#" onclick="openPopUp('wad-newsymptom-popup')" title="Add new symptom"><i class="fa fa-plus-circle" aria-hidden="true"></i> add new symptom</a>
+  <a href="#" onclick="openPopUp('wad-newsymptom-popup')" title="Create new symptom type"><i class="fa fa-plus-circle" aria-hidden="true"></i> create new symptom type</a>
 </div>
 
 <div class="wad-body-content-title">Latest Observations</div>
@@ -126,7 +153,6 @@ $patSymptoms = getPatientsSymptoms($patient_id);
       </div>
     </div>
   </div>
-</div>
 
 
 </div>
