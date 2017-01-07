@@ -18,7 +18,7 @@ $result = $stmt->execute(array($appointment_date, $appointment_time, $room, $doc
 
 if ($result !== false) {
   $_SESSION['success_message'] = "Treatment added succesfuly!";
-  header ('Location: patientsHistory.php?patient_id='.$patient_id);
+  header ('Location: seeApointments.php?patient_id='.$patient_id);
 }
 else {
   $_SESSION['error_message'] = "Treatment submission failed!";

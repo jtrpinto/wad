@@ -8,7 +8,7 @@ include('templates/body.php');
 include_once('templates/calendar.php');
 //include_once('templates/calendar_myShedule.php');
 include('1_database_exams.php');
-
+include('1_database_patients.php');
 $futureAppointments = selectFutureAppointments($appointments_info_doctor,$currentDate,$currentTime);
 /*$month = array('0' => 'January',
                      '1' => 'February', 
@@ -32,9 +32,9 @@ $futureAppointments = selectFutureAppointments($appointments_info_doctor,$curren
   <div class="wad-body-content-box">
   <form method="get">
   <label class="go-to">Go to:</label>
-  <label class="go-to-month-half">Month:</label><input type="month" name="month" pattern="[A-Za-z]{0-9}" title="Can only contain characters!">
+  <label class="go-to-month-half">Month:</label><input type="text" name="monthText" pattern="[A-Za-z]{0-9}" title="Can only contain characters!">
   <label class="go-to-year-half">Year:</label><input type="number" name="year" min="2010" max="2018">
-  <a href="mySchedule.php?month=<?=$_GET['month']?>&year=<?=$_GET['year']?>"><input type="submit" name="search" class="submit-go-to" value="Go">
+  <a href="mySchedule.php?month=<?=$_GET['monthText']?>&year=<?=$_GET['year']?>"><input type="submit" name="search" class="submit-go-to" value="Go">
   </form>
       <?php
       $calendar = new Calendar($doctor_id);
@@ -60,7 +60,7 @@ $futureAppointments = selectFutureAppointments($appointments_info_doctor,$curren
     <td><?php echo $appointment['first_name_patient'];
     	      echo ' ';
     	      echo $appointment['last_name_patient'];?></td>
-    <td><a href="appointmentDetails.php?patient_id=<?=$appointment['patient_id']?>">Details</a></td>
+    <td><a href="appointmentDetails.php?patient_id=<?=$appointment['patient_id']?>&app_id=<?=$appointment['id']?>">Details</a></td>
   </tr>
    <?php }; ?>
   </table> 

@@ -165,6 +165,22 @@
   </form>
 </div>
 
+
+<div id="wad-newappointment-pat-popup" class="wad-popup">
+  <a class="wad-popup-icon" href="#" onclick="closePopUp('wad-newappointment-pat-popup')"><i class="fa fa-times" aria-hidden="true"></i></a>
+  <div class="wad-popup-title">Add New Appointment</div>
+  <form action="0_action_new_appointment.php" id="newappointment-form" method="POST">
+    <input type="hidden" name="patient_id" value="<?=$patient_id?>"></input>
+    Date:
+    <input type="date" name="appointment_date" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" title="Can only have the form: YYYY-MM-DD!"></input><br><br>
+    Time:
+    <input type="time" name="appointment_time" pattern="[0-9]{2}:[0-9]{2}:[0-9]{2}" title="Can only have the form: hh:mm:ss!"></input><br><br>
+    Room:
+    <input type="text" name="roomApp"></input><br><br>
+    <input type="submit" class="wad-popup-submit" value="Submit"></input>
+  </form>
+</div>
+
 <script src="files/js/scripts.js"></script>
 </body>
 </html>
