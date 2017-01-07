@@ -102,12 +102,12 @@ $patSymptoms = getPatientsSymptoms($patient_id);
       <li>
         <b><?=$symp['name']?></b> (<?=$symp['description']?>)<br>
         (place: <b><?=$symp['place']?></b>, from <?=$symp['start_date']?> to <?=$symp['end_date']?>)
-        <a href="editSymptom.php?patient_id=<?=$patient_id?>&symptom_id=<?=$symp['id']?>" title="Edit symptom"><i class="fa fa-pencil-square" aria-hidden="true"></i></a><br>
+        <a href="editSymptom.php?patient_id=<?=$patient_id?>&symptom_id=<?=$symp['id']?>" title="Edit symptom"><i class="fa fa-pencil-square" aria-hidden="true"></i></a>
         <a href="0_action_delete_symptom.php?patient_id=<?=$patient_id?>&symptom_id=<?=$symp['id']?>" title="Delete symptom"><i class="fa fa-window-close" aria-hidden="true"></i></a>
       </li>
   <?php } ?>
   </ul>
-  <a href="#" onclick="openPopUp('wad-newsymptom-popup')" title="Add new symptom"><i class="fa fa-plus-circle" aria-hidden="true"></i> add new symptom</a>
+  <a href="#" onclick="openPopUp('wad-newsymptom-popup')" title="Add new symptom"><i class="fa fa-plus-circle" aria-hidden="true"></i> add new symptom</a><br>
   <a href="#" onclick="openPopUp('wad-newsymptom-popup')" title="Create new symptom type"><i class="fa fa-plus-circle" aria-hidden="true"></i> create new symptom type</a>
 </div>
 
