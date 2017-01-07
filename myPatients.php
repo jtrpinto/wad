@@ -5,12 +5,11 @@ $_GET['class2'] = "wad-side-menu-button-active";
 $_GET['class3'] = "";
 $_GET['class4'] = "";
 include('templates/body.php');
-
-//$_GET['patient_id'] = "-1"; // este patient está definido estaticamente...
-//include('1_database_appointments.php')
 include('1_database_patients.php');
-//$patients_list = getAllPatients();
-//$patients = array();
+
+$currentDate = date('Y-m-d');
+$currentTime = date('H:i:s');
+
 ?>
 
 <div id ="wad-manageMyInfo-page" class="wad-body-content">
@@ -22,7 +21,6 @@ include('1_database_patients.php');
   $appointmentsTotalInformation = array();
     $i = 0;
     foreach ($appointments_info_doctor as $appointment) { 
-     /*$appointmentsTotalInformation[$i] = $appointmentsTotalInformation();*/
      $appointmentsTotalInformation[$i]['date'] = $appointment['appointment_date'];
      $appointmentsTotalInformation[$i]['time'] = $appointment['appointment_time'];
      $appointmentsTotalInformation[$i]['room'] = $appointment['room'];
@@ -42,9 +40,9 @@ include('1_database_patients.php');
      <option value="3">Future Appointment (Nearest First)</option>
      <option value="4">Last Name (Ascending)</option>
      <option value="5">Last Name (Descending)</option>
-     <option value="6">Current Diagnosis (Positive First)</option>
-     <option value="7">Current Diagnosis (Negative First)</option>
-   </select></form> <!--br /--> 
+     <option value="6">First Name (Ascending)</option>
+     <option value="7">First Name (Descending)</option>
+   </select></form> 
 
 <!-- Code with javascript -->
    <label id="teste" class="input-text">Search:</label>
@@ -95,12 +93,12 @@ include('1_database_patients.php');
             ordenated.push(preordered[i]);
           }
         }
-
+        ordenated = lastAppointment(ordenated);
         break;
       case '2':
          // Last Appointment (least recent first)
         preordered = array.sort(function(a,b){return a["date"] < b["date"]});
-
+        //alert(JSON.stringify(preordered));
         for(var i = 0; i < preordered.length; i++){
           var p_id = preordered[i]["patient_id"];
           if (jQuery.inArray(p_id, ids_position)==-1){
@@ -109,16 +107,73 @@ include('1_database_patients.php');
           }
         }
         ordenated= finalordered.sort(function(a,b){return b["date"] < a["date"]});
+
+        ordenated = lastAppointment(ordenated);
         break;
       case '3':
+        // Future Appointment (Nearest First)
+        preordered = array.sort(function(a,b){return a["date"] < b["date"]});
+        for(var i = 0; i < preordered.length; i++){
+          var p_id = preordered[i]["patient_id"];
+          if (jQuery.inArray(p_id, ids_position)==-1){
+            ids_position.push(p_id);
+            finalordered.push(preordered[i]);
+          }
+        }
+        ordenated= finalordered.sort(function(a,b){return b["date"] < a["date"]});
+        ordenated = futureAppointment(ordenated);
         break;
       case '4':
+      // Last Name (Ascending) 
+      preordered = array.sort(function(a,b){return b["patient_ln"].localeCompare(a["patient_ln"])==-1;});
+      //preordered = array.sort(function(a,b){return a["date"] < b["date"]});
+        for(var i = 0; i < preordered.length; i++){
+          var p_id = preordered[i]["patient_id"];
+          if (jQuery.inArray(p_id, ids_position)==-1){
+            ids_position.push(p_id);
+            finalordered.push(preordered[i]);
+          }
+        }
+        ordenated= finalordered;
         break;
       case '5':
+      // Last Name (Descending) 
+      preordered = array.sort(function(a,b){return a["patient_ln"].localeCompare(b["patient_ln"])==-1;});
+      //preordered = array.sort(function(a,b){return a["date"] < b["date"]});
+        for(var i = 0; i < preordered.length; i++){
+          var p_id = preordered[i]["patient_id"];
+          if (jQuery.inArray(p_id, ids_position)==-1){
+            ids_position.push(p_id);
+            finalordered.push(preordered[i]);
+          }
+        }
+        ordenated= finalordered;
         break;
       case '6':
+      // First Name (Ascending) 
+      preordered = array.sort(function(a,b){return b["patient_fn"].localeCompare(a["patient_fn"])==-1;});
+      //preordered = array.sort(function(a,b){return a["date"] < b["date"]});
+        for(var i = 0; i < preordered.length; i++){
+          var p_id = preordered[i]["patient_id"];
+          if (jQuery.inArray(p_id, ids_position)==-1){
+            ids_position.push(p_id);
+            finalordered.push(preordered[i]);
+          }
+        }
+        ordenated= finalordered;
         break;
       case '7':
+      // First Name (Descending) 
+      preordered = array.sort(function(a,b){return a["patient_fn"].localeCompare(b["patient_fn"])==-1;});
+      //preordered = array.sort(function(a,b){return a["date"] < b["date"]});
+        for(var i = 0; i < preordered.length; i++){
+          var p_id = preordered[i]["patient_id"];
+          if (jQuery.inArray(p_id, ids_position)==-1){
+            ids_position.push(p_id);
+            finalordered.push(preordered[i]);
+          }
+        }
+        ordenated= finalordered;
         break;
       default:
         alert("error");
@@ -126,6 +181,44 @@ include('1_database_patients.php');
     }
     changePatientList(ordenated);
   }
+
+function lastAppointment(ordenated){
+  var currentDate = <?php echo json_encode($currentDate)?>;
+  var currentTime = <?php echo json_encode($currentTime)?>;
+  var prev_array = [];
+
+  for(var i = 0; i < ordenated.length; i++){
+    if (ordenated[i]["date"] < currentDate){
+      prev_array.push(ordenated[i]);
+    }
+    else if(ordenated[i]["date"] == currentDate){
+      if(ordenated[i]["time"] < currentTime){
+        prev_array.push(ordenated[i]);
+      }
+    }
+  }
+  return prev_array;
+}
+
+function futureAppointment(ordenated){
+  var currentDate = <?php echo json_encode($currentDate)?>;
+  var currentTime = <?php echo json_encode($currentTime)?>;
+  var prev_array = [];
+
+  for(var i = 0; i < ordenated.length; i++){
+    if (ordenated[i]["date"] > currentDate){
+      prev_array.push(ordenated[i]);
+    }
+    else if(ordenated[i]["date"] == currentDate){
+      if(ordenated[i]["time"] > currentTime){
+        prev_array.push(ordenated[i]);
+      }
+    }
+  }
+  return prev_array;
+
+}
+
 function changePatientList(ordenated){
     var innerString = "";
 
@@ -189,14 +282,6 @@ if (first_name!= '' && last_name != ''){
 
   changePatientList(resultName);
 }
-/*
-function search_all_patients(){
-  var patients_list = <?php echo json_encode($patient_list) ?>;
-
-  changePatientList(patient_list);
-  alert(JSON.stringify(<?php echo json_encode($patient_list) ?>));
-
-}*/
 
 </script>
 

@@ -45,20 +45,17 @@ include('1_database_doctors.php');
 <script type="text/javascript">
   
   function updateClock() {
-    var now = new Date(), // current date
-        //weekDay = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-        months = ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']; // you get the idea
-        time = now.getHours() + ':' + now.getMinutes(), // again, you get the idea
+    var now = new Date(), 
 
-        // a cleaner way than string concatenation
+        months = ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']; 
+        time = now.getHours() + ':' + now.getMinutes(), 
+
         date = [now.getDate(), 
                 months[now.getMonth()],
                 now.getFullYear()].join(' ');
 
-    // set the content of the element with the ID time to the formatted string
     document.getElementById('date').innerHTML = [date].join(' ');
     document.getElementById('time').innerHTML = [time].join(' ');
-    // call this function again in 1000ms
     setTimeout(updateClock, 1000);
 }
 updateClock(); // initial call
