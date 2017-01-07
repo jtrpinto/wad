@@ -33,8 +33,8 @@ $patApps = getPatientsAppointments($patient_id);
     Appointment date: <?=$obs['appointment_date']?> <br>
     Doctor: <?=$obs['first_name']?> <?=$obs['last_name']?>, MD<br>
   </span>
-  <a href="" title="Edit observation"><i class="fa fa-pencil-square" aria-hidden="true"></i></a>
-  <a href="" title="Delete Observation"><i class="fa fa-window-close" aria-hidden="true"></i></a>
+  <a href="editObservation.php?patient_id=<?=$patient_id?>&observation_id=<?=$obs['id']?>" title="Edit observation"><i class="fa fa-pencil-square" aria-hidden="true"></i></a>
+  <a href="0_action_delete_observation.php?patient_id=<?=$patient_id?>&observation_id=<?=$obs['id']?>" title="Delete Observation"><i class="fa fa-window-close" aria-hidden="true"></i></a>
 
   </div>
 <?php } ?>

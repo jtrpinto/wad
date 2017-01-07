@@ -20,5 +20,14 @@ function getPatientsObservations($pat_id){
   return $obsList;
 }
 
+function getSingleObservationInfo($obs_id){
+  global $conn;
+
+  $stmt = $conn->prepare('SELECT * FROM wad.observations WHERE observations.id = ?');
+  $stmt->execute(array($obs_id));
+  $obsInfo = $stmt->fetchAll();
+
+  return $obsInfo;
+}
 
 ?>

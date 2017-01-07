@@ -14,10 +14,10 @@ $stmt = $conn->prepare('DELETE FROM wad.symptoms_per_patients WHERE symptoms_id 
 $result = $stmt->execute(array($symptom_id, $patient_id));
 
 if ($result !== false) {
-  $_SESSION['success_message'] = "Treatment deleted succesfuly!";
+  $_SESSION['success_message'] = "Symptom deleted succesfuly!";
 }
 else {
-  $_SESSION['error_message'] = "Treatment deletion failed!";
+  $_SESSION['error_message'] = "Symptom deletion failed!";
 }
 
 header ('Location: patientsHistory.php?patient_id='.$patient_id);
