@@ -37,7 +37,7 @@ $patSymptoms = getPatientsSymptoms($patient_id);
   <?php foreach ($diagnosesList as $diagnosis){ ?>
       <li>
         <?=$diagnosis['exam_date']?> - <b><?=$diagnosis['diagnoses_result']?></b> (probability: <?=$diagnosis['probability']?>)
-        (<a href="analyseExam.php?exam_id=<?=$diagnosis['exam_id']?>">see exam</a>)
+        <a href="analyseExam.php?exam_id=<?=$diagnosis['exam_id']?>" title="See exam"><i class="fa fa-external-link-square" aria-hidden="true"></i></a>
       </li>
   <?php } ?>
   </ul>
@@ -47,7 +47,7 @@ $patSymptoms = getPatientsSymptoms($patient_id);
   <?php foreach ($examsList as $exam){ ?>
       <li>
         <?=$exam['exam_date']?> - <b><?=$exam['auto_diagnoses_result']?></b> (probability: <?=$exam['auto_probability']?>)
-        (<a href="analyseExam.php?exam_id=<?=$exam['id']?>">see exam</a>)
+        <a href="analyseExam.php?exam_id=<?=$exam['id']?>" title="See exam"><i class="fa fa-external-link-square" aria-hidden="true"></i></a>
       </li>
   <?php } ?>
   </ul>
@@ -60,10 +60,12 @@ $patSymptoms = getPatientsSymptoms($patient_id);
   <?php foreach ($treatList as $treat){ ?>
       <li>
         <b><?=$treat['name']?> <?=$treat['dose']?></b> (<?=$treat['frequency']?>, from <?=$treat['start_date']?> to <?=$treat['end_date']?>)
+        <a href="editTreatment.php?patient_id=<?=$patient_id?>&treatment_id=<?=$treat['id']?>" title="Edit treatment"><i class="fa fa-pencil-square" aria-hidden="true"></i></a>
+        <a href="0_action_delete_treatment.php?patient_id=<?=$patient_id?>&treatment_id=<?=$treat['id']?>" title="Delete treatment"><i class="fa fa-window-close" aria-hidden="true"></i></a>
       </li>
   <?php } ?>
   </ul>
-  (<a href="#" onclick="openPopUp('wad-newtreatment-popup')">add new treatment</a>) (<a href="#">manage treatments</a>)
+  <a href="#" onclick="openPopUp('wad-newtreatment-popup')" title="Add new treatment"><i class="fa fa-plus-circle" aria-hidden="true"></i> add new treatment</a>
 </div>
 
 <div class="wad-body-content-title">Current Symptoms</div>
@@ -74,10 +76,12 @@ $patSymptoms = getPatientsSymptoms($patient_id);
       <li>
         <b><?=$symp['name']?></b> (<?=$symp['description']?>)<br>
         (place: <b><?=$symp['place']?></b>, from <?=$symp['start_date']?> to <?=$symp['end_date']?>)
+        <a href="editSymptom.php?patient_id=<?=$patient_id?>&symptom_id=<?=$symp['id']?>" title="Edit symptom"><i class="fa fa-pencil-square" aria-hidden="true"></i></a>
+        <a href="0_action_delete_symptom.php?patient_id=<?=$patient_id?>&symptom_id=<?=$symp['id']?>" title="Delete symptom"><i class="fa fa-window-close" aria-hidden="true"></i></a>
       </li>
   <?php } ?>
   </ul>
-  (<a href="#" onclick="openPopUp('wad-newsymptom-popup')">add new symptom</a>) (<a href="#">manage symptoms</a>)
+  <a href="#" onclick="openPopUp('wad-newsymptom-popup')" title="Add new symptom"><i class="fa fa-plus-circle" aria-hidden="true"></i> add new symptom</a>
 </div>
 
 <div class="wad-body-content-title">Latest Observations</div>
@@ -90,7 +94,7 @@ $patSymptoms = getPatientsSymptoms($patient_id);
     <?php } ?>
   </ul>
   <?php if(empty($obsList)){echo 'No observations.<br>';} ?>
-  (<a href="#">see all observations</a>)
+  <a href="#" title="See all observations"><i class="fa fa-external-link-square" aria-hidden="true"></i> see all observations</a>
 </div>
 
 <div class="wad-half-body-division">
@@ -105,7 +109,7 @@ $patSymptoms = getPatientsSymptoms($patient_id);
             <?php } ?>
         </ul>
         <?php if(empty($futAppList)){echo 'No future appointments.<br>';} ?>
-        (<a href="#">see all appointments</a>)
+        <a href="#" title="See all appointments"><i class="fa fa-external-link-square" aria-hidden="true"></i> see all appointments</a>
       </div>
     </div>
     <div class="wad-half-body-content">

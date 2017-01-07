@@ -21,4 +21,14 @@ function getAllTreatments(){
   return $allTreatments;
 }
 
+function getSingleTreatmentInfo($treatment_id, $patient_id){
+  global $conn;
+
+	$stmt = $conn->prepare('SELECT * FROM wad.treatments JOIN wad.treat_per_patients ON treatments.id = treat_per_patients.treatment_id WHERE treat_per_patients.patient_id = ? AND treat_per_patients.treatment_id = ?');
+  $stmt->execute(array($patient_id, $treatment_id));
+  $treatInfo = $stmt->fetchAll();
+
+  return $treatInfo;
+}
+
 ?>
