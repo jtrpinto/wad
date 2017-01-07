@@ -112,6 +112,32 @@
   </form>
 </div>
 
+<div id="wad-newappointment-popup" class="wad-popup">
+  <a class="wad-popup-icon" href="#" onclick="closePopUp('wad-newappointment-popup')"><i class="fa fa-times" aria-hidden="true"></i></a>
+  <div class="wad-popup-title">Add New Appointment</div>
+  <form action="0_action_new_appointment.php" id="newappointment-form" method="POST">
+  <?php include('1_database_patients.php');
+      $patients_list = getAllPatients(); ?>
+    Patient:
+    <select name='patient_id' class="input-box">
+      <?php foreach ($patients_list as $patient){ ?>
+        <option value="<?=$patient['id']?>">
+        <?php echo $patient['first_name'];
+              echo ' ';
+              echo $patient['last_name'];?> </option>
+        <?php } ?>
+    </select><br><br>
+    Date:
+    <input type="date" name="appointment_date" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" title="Can only have the form: YYYY-MM-DD!"></input><br><br>
+    Time:
+    <input type="time" name="appointment_time" pattern="[0-9]{2}:[0-9]{2}:[0-9]{2}" title="Can only have the form: hh:mm:ss!"></input><br><br>
+    Room:
+    <input type="text" name="roomApp"></input><br><br>
+    </input>
+    <input type="submit" class="wad-popup-submit" value="Submit"></input>
+  </form>
+</div>
+
 <script src="files/js/scripts.js"></script>
 </body>
 </html>

@@ -14,7 +14,7 @@ if(isset($_GET["patient_id"])){
 
 function getAllPatients(){
 	global $conn;
-	$patient_info = $conn->prepare('SELECT first_name, last_name, healthcare_id, birth_date, gender, country, city, street, floor_app, door_number, postal_code, phone, email, id   FROM wad.patients ORDER BY first_name');
+	$patient_info = $conn->prepare('SELECT id, first_name, last_name, healthcare_id, birth_date, gender, country, city, street, floor_app, door_number, postal_code, phone, email, id   FROM wad.patients ORDER BY first_name');
 	$patient_info->execute();
 	$allPatients = $patient_info->fetchAll();
 	return $allPatients;

@@ -497,9 +497,38 @@ input{
 .column-style-4{
   width: 15%;
 }
-
-
-
+.go-to{
+  margin-left: 17.5%;
+  font-weight: bold;
+  width: 6.5%
+}
+.go-to-month-half{
+  width: 7%;
+}
+.go-to-year-half{
+  width: 5.5%;
+}
+.go-to-moth-half input{
+  width: 15%;
+  margin-top: -5px;
+}
+.submit-go-to{
+  text-align: center;
+  background-color: #ddd;
+  border-style: none;
+  color: #919191;
+  font-size:1em;
+}
+.button-submit-pat-new{
+  text-align: center;
+  background-color: #ddd;
+  margin-left: 30%; 
+  border-style: none;
+  width:40%;
+  color: #919191;
+  font-size:1em;
+  margin-top: 2em;
+}
 
 /*====================================================================||||===*/
 /*======================== CALENDAR !!!===============================||||===*/

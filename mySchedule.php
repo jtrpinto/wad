@@ -10,13 +10,32 @@ include_once('templates/calendar.php');
 include('1_database_exams.php');
 
 $futureAppointments = selectFutureAppointments($appointments_info_doctor,$currentDate,$currentTime);
-//$recentExams = getRecentExams($doctor_id);
+/*$month = array('0' => 'January',
+                     '1' => 'February', 
+                     '2' => 'March',
+                     '3' => 'April',
+                     '4' => 'May',
+                     '5' => 'June',
+                     '6' => 'July',
+                     '7' => 'August',
+                     '8' => 'September',
+                     '9' => 'October',
+                     '10' => 'November',
+                     '11' => 'December',
+                     ); */
+
 ?>
+
 
 <div class="wad-body-content">
   <div class="wad-body-content-title">Manage My Schedule</div>
   <div class="wad-body-content-box">
-  <br><label> </label><br/ >
+  <form method="get">
+  <label class="go-to">Go to:</label>
+  <label class="go-to-month-half">Month:</label><input type="month" name="month" pattern="[A-Za-z]{0-9}" title="Can only contain characters!">
+  <label class="go-to-year-half">Year:</label><input type="number" name="year" min="2010" max="2018">
+  <a href="mySchedule.php?month=<?=$_GET['month']?>&year=<?=$_GET['year']?>"><input type="submit" name="search" class="submit-go-to" value="Go">
+  </form>
       <?php
       $calendar = new Calendar($doctor_id);
       echo $calendar->show();
@@ -41,11 +60,11 @@ $futureAppointments = selectFutureAppointments($appointments_info_doctor,$curren
     <td><?php echo $appointment['first_name_patient'];
     	      echo ' ';
     	      echo $appointment['last_name_patient'];?></td>
-    <td><a href="appointmentDetails.php?patient_id=<?=$appointment['patient_id']?>">Details <?php echo $appointment['patient_id']; ?></a></td>
+    <td><a href="appointmentDetails.php?patient_id=<?=$appointment['patient_id']?>">Details</a></td>
   </tr>
    <?php }; ?>
   </table> 
-
+   <a href="#" onclick="openPopUp('wad-newappointment-popup')" ><input type="submit" name="addApp" class="button-submit-pat-new" value="Add New Appointment"></a>
   </div>
 
 
