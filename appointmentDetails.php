@@ -6,7 +6,7 @@ $_GET['class3'] = "";
 $_GET['class4'] = "";
 include('templates/body.php');
 $patient_id = $_GET['patient_id'];
-include('1_database_patients.php');
+
 $_GET['classMenu1'] = "";
 $_GET['classMenu2'] = "";
 $_GET['classMenu3'] = "button-submit-pat-active";

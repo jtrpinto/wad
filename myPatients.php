@@ -5,7 +5,6 @@ $_GET['class2'] = "wad-side-menu-button-active";
 $_GET['class3'] = "";
 $_GET['class4'] = "";
 include('templates/body.php');
-include('1_database_patients.php');
 
 $currentDate = date('Y-m-d');
 $currentTime = date('H:i:s');
@@ -15,12 +14,12 @@ $currentTime = date('H:i:s');
 <div id ="wad-manageMyInfo-page" class="wad-body-content">
   <div class="wad-body-content-title">My Patients</div>
 
-<?php 
+<?php
   $php_array = array('a1', 'a2', 'a3');
 
   $appointmentsTotalInformation = array();
     $i = 0;
-    foreach ($appointments_info_doctor as $appointment) { 
+    foreach ($appointments_info_doctor as $appointment) {
      $appointmentsTotalInformation[$i]['date'] = $appointment['appointment_date'];
      $appointmentsTotalInformation[$i]['time'] = $appointment['appointment_time'];
      $appointmentsTotalInformation[$i]['room'] = $appointment['room'];
@@ -42,7 +41,7 @@ $currentTime = date('H:i:s');
      <option value="5">Last Name (Descending)</option>
      <option value="6">First Name (Ascending)</option>
      <option value="7">First Name (Descending)</option>
-   </select></form> 
+   </select></form>
 
 <!-- Code with javascript -->
    <label id="teste" class="input-text">Search:</label>
@@ -57,7 +56,7 @@ $currentTime = date('H:i:s');
 	<li>
 		<div class="patient">
 		<a href="createNewPatient.php" class="img"><img src="files/img/00000000.png"/></a>
-		<a href="#" class="name">New Patient</a> 
+		<a href="#" class="name">New Patient</a>
 		</div>
 	</li>
 
@@ -85,7 +84,7 @@ $currentTime = date('H:i:s');
       case '1':
         // Last Appointment (most recent first)
         preordered = array.sort(function(a,b){return a["date"] < b["date"]});
-        
+
         for(var i = 0; i < preordered.length; i++){
           var p_id = preordered[i]["patient_id"];
           if (jQuery.inArray(p_id, ids_position)==-1){
@@ -124,7 +123,7 @@ $currentTime = date('H:i:s');
         ordenated = futureAppointment(ordenated);
         break;
       case '4':
-      // Last Name (Ascending) 
+      // Last Name (Ascending)
       preordered = array.sort(function(a,b){return b["patient_ln"].localeCompare(a["patient_ln"])==-1;});
       //preordered = array.sort(function(a,b){return a["date"] < b["date"]});
         for(var i = 0; i < preordered.length; i++){
@@ -137,7 +136,7 @@ $currentTime = date('H:i:s');
         ordenated= finalordered;
         break;
       case '5':
-      // Last Name (Descending) 
+      // Last Name (Descending)
       preordered = array.sort(function(a,b){return a["patient_ln"].localeCompare(b["patient_ln"])==-1;});
       //preordered = array.sort(function(a,b){return a["date"] < b["date"]});
         for(var i = 0; i < preordered.length; i++){
@@ -150,7 +149,7 @@ $currentTime = date('H:i:s');
         ordenated= finalordered;
         break;
       case '6':
-      // First Name (Ascending) 
+      // First Name (Ascending)
       preordered = array.sort(function(a,b){return b["patient_fn"].localeCompare(a["patient_fn"])==-1;});
       //preordered = array.sort(function(a,b){return a["date"] < b["date"]});
         for(var i = 0; i < preordered.length; i++){
@@ -163,7 +162,7 @@ $currentTime = date('H:i:s');
         ordenated= finalordered;
         break;
       case '7':
-      // First Name (Descending) 
+      // First Name (Descending)
       preordered = array.sort(function(a,b){return a["patient_fn"].localeCompare(b["patient_fn"])==-1;});
       //preordered = array.sort(function(a,b){return a["date"] < b["date"]});
         for(var i = 0; i < preordered.length; i++){
@@ -223,11 +222,11 @@ function changePatientList(ordenated){
     var innerString = "";
 
     for(var i = 0; i < ordenated.length; i++){
-      innerString += '<li><div class="patient">' + 
-    '<a href="editPatientInfo.php?patient_id=' + ordenated[i]["patient_id"] +'" class="img"><img src="files/img/patients/' + ordenated[i]["patient_healthcare_id"] + '.jpg"/></a>' + 
+      innerString += '<li><div class="patient">' +
+    '<a href="editPatientInfo.php?patient_id=' + ordenated[i]["patient_id"] +'" class="img"><img src="files/img/patients/' + ordenated[i]["patient_healthcare_id"] + '.jpg"/></a>' +
     '<a href="#" class="name">' + ordenated[i]["patient_fn"] + ' ' + ordenated[i]["patient_ln"] + '</a></div></li>';
     }
-  
+
     document.getElementById('patient_list').innerHTML = innerString;
   }
 
@@ -237,7 +236,7 @@ function search_by_name(){
   var last_name = document.getElementById('input_pln').value;
   var resultName = [];
   var ids_position = [];
- 
+
 if (first_name!= '' && last_name != ''){
     // procurar por first and last name
     for(var i = 0; i < appointmentsTotalInformation.length; i++){
@@ -248,7 +247,7 @@ if (first_name!= '' && last_name != ''){
             ids_position.push(p_id);
             resultName.push(appointmentsTotalInformation[i]);
           }
-     } 
+     }
     }
   }
   else if (first_name != '' && last_name == '') {
@@ -260,10 +259,10 @@ if (first_name!= '' && last_name != ''){
             ids_position.push(p_id);
             resultName.push(appointmentsTotalInformation[i]);
           }
-     } 
+     }
     }
   }
-  
+
   else if (last_name != '' && first_name == '') {
     // caso so seja introduzido o last_name
     for(var i = 0; i < appointmentsTotalInformation.length; i++){
@@ -273,7 +272,7 @@ if (first_name!= '' && last_name != ''){
             ids_position.push(p_id);
             resultName.push(appointmentsTotalInformation[i]);
           }
-     } 
+     }
     }
   }
    else if (last_name == '' && first_name == ''){

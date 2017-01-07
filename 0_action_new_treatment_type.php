@@ -9,7 +9,7 @@ if (!$_SESSION['doctor_id']) {
 $patient_id = $_POST['patient_id'];
 $name = $_POST['name'];
 $dose = $_POST['dose'];
-$treat_type = $_POST['treat_type']
+$treat_type = $_POST['treat_type'];
 
 global $conn;
 $stmt = $conn->prepare('INSERT INTO wad.treatments VALUES (DEFAULT, ?, ?, ?)');

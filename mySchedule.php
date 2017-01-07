@@ -6,12 +6,12 @@ $_GET['class3'] = "wad-side-menu-button-active";
 $_GET['class4'] = "";
 include('templates/body.php');
 include_once('templates/calendar.php');
-//include_once('templates/calendar_myShedule.php');
+
 include('1_database_exams.php');
 include('1_database_patients.php');
 $futureAppointments = selectFutureAppointments($appointments_info_doctor,$currentDate,$currentTime);
 /*$month = array('0' => 'January',
-                     '1' => 'February', 
+                     '1' => 'February',
                      '2' => 'March',
                      '3' => 'April',
                      '4' => 'May',
@@ -53,7 +53,7 @@ $futureAppointments = selectFutureAppointments($appointments_info_doctor,$curren
     <th> </th>
   </tr>
   <?php foreach ($futureAppointments as $appointment) { ?>
-  <tr>  
+  <tr>
     <td><?=$appointment['appointment_time'];?></td>
     <td><?=$appointment['appointment_date'];?></td>
     <td class="column-style-4-colm"><?=$appointment['room'];?></td>
@@ -63,7 +63,7 @@ $futureAppointments = selectFutureAppointments($appointments_info_doctor,$curren
     <td><a href="appointmentDetails.php?patient_id=<?=$appointment['patient_id']?>&app_id=<?=$appointment['id']?>">Details</a></td>
   </tr>
    <?php }; ?>
-  </table> 
+  </table>
    <a href="#" onclick="openPopUp('wad-newappointment-popup')" ><input type="submit" name="addApp" class="button-submit-pat-new" value="Add New Appointment"></a>
   </div>
 

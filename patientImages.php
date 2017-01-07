@@ -5,7 +5,6 @@ $_GET['class2'] = "wad-side-menu-button-active";
 $_GET['class3'] = "";
 $_GET['class4'] = "";
 include('templates/body.php');
-include('1_database_patients.php');
 include('1_database_exams.php');
 $_GET['classMenu1'] = "";
 $_GET['classMenu2'] = "";
