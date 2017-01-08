@@ -31,9 +31,9 @@ $futureAppointments = selectFutureAppointments($appointments_info_doctor,$curren
   <div class="wad-body-content-box">
   <form method="get">
   <label class="go-to">Go to:</label>
-  <label class="go-to-month-half">Month:</label><input type="text" name="monthText" pattern="[A-Za-z]{0-9}" title="Can only contain characters!">
+  <label class="go-to-month-half">Month:</label><input type="text" name="month" pattern="{0-9}" title="Can only contain numbers!">
   <label class="go-to-year-half">Year:</label><input type="number" name="year" min="2010" max="2018">
-  <a href="mySchedule.php?month=<?=$_GET['monthText']?>&year=<?=$_GET['year']?>"><input type="submit" name="search" class="submit-go-to" value="Go">
+  <a href="mySchedule.php?month=<?=$_GET['month']?>&year=<?=$_GET['year']?>"><input type="submit" name="search" class="submit-go-to" value="Go">
   </form>
       <?php
       $calendar = new Calendar($doctor_id);
@@ -45,10 +45,10 @@ $futureAppointments = selectFutureAppointments($appointments_info_doctor,$curren
  <table class="app-table">
  <?php if(empty($futureAppointments)){echo 'No future appointments found.';}?>
   <tr class="table-first-line">
-    <th class="column-style-1">HOUR</th>
-    <th class="column-style-2">DATE</th>
-    <th class="column-style-4">ROOM</th>
-    <th class="column-style-3">PATIENT</th>
+    <th class="column-style-1">Hour</th>
+    <th class="column-style-2">Date</th>
+    <th class="column-style-4">Room</th>
+    <th class="column-style-3">Patient</th>
     <th> </th>
   </tr>
   <?php foreach ($futureAppointments as $appointment) { ?>
@@ -59,7 +59,7 @@ $futureAppointments = selectFutureAppointments($appointments_info_doctor,$curren
     <td><?php echo $appointment['first_name_patient'];
     	      echo ' ';
     	      echo $appointment['last_name_patient'];?></td>
-    <td><a href="appointmentDetails.php?patient_id=<?=$appointment['patient_id']?>&app_id=<?=$appointment['id']?>">Details</a></td>
+    <td><a href="appointmentDetails.php?patient_id=<?=$appointment['patient_id']?>&app_id=<?=$appointment['id']?>" title="See details"><i class="fa fa-external-link-square" aria-hidden="true"></i></a></td>
   </tr>
    <?php }; ?>
   </table>
