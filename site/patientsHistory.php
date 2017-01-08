@@ -30,6 +30,7 @@ $patSymptoms = getPatientsSymptoms($patient_id);
 <br>
 <div class="wad-body-content-title">Diagnosis Evolution</div>
 <div class="wad-body-content-box wad-darker-box">
+  <?php if(!empty($examsList)){ ?>
   <svg height="140" width="100%">
     <?php $xx=20; $totalPts=count($examsList);?>
     <path id="graph-auto"
@@ -37,23 +38,24 @@ $patSymptoms = getPatientsSymptoms($patient_id);
       $yy=120-$examsList[$i]['auto_probability'];
       echo $xx.' '.$yy.' ';
       if($i!=0){
-        $xx+=50;
+        $xx+=75;
         echo 'L';
       }}?>"
     stroke="#548235" stroke-width="3" fill="none" />
     <g stroke="#548235" stroke-width="3" fill="#548235">
       <?php foreach ($examsList as $exam){ ?>
         <circle cx="<?=$xx?>" cy="<?=120-$exam['auto_probability']?>" r="2" />
-      <?php $xx -= 50;} ?>
+      <?php $xx -= 75;} ?>
     </g>
     <g font-size="12" font-weight="bold" fill="black" stroke="none" text-anchor="middle">
-      <?php $xx+=($totalPts*50);
+      <?php $xx+=($totalPts*75);
         foreach ($examsList as $exam){ ?>
         <text x="<?=$xx?>" y="<?=120-$exam['auto_probability']?>" dy="20"><?=$exam['auto_probability'].'%'?></text>
-      <?php $xx-=50; } ?>
+      <?php $xx-=75; } ?>
     </g>
   </svg>
   <br>
+  <?php } ?>
 
   <h4>Manual diagnoses:</h4>
   <?php if(empty($diagnosesList)){echo 'No manual diagnoses.';} ?>
