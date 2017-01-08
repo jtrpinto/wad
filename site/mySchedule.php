@@ -43,7 +43,7 @@ $futureAppointments = selectFutureAppointments($appointments_info_doctor,$curren
   <div class="wad-body-content-title">All Appointments</div>
   <div class="wad-body-content-box">
  <table class="app-table">
- <?php if(empty($futureAppointments)){echo 'No future appointments found.';}?>
+ <?php if(empty($futureAppointments)){echo 'No future appointments found.';} else {?>
   <tr class="table-first-line">
     <th class="column-style-1">Hour</th>
     <th class="column-style-2">Date</th>
@@ -61,7 +61,7 @@ $futureAppointments = selectFutureAppointments($appointments_info_doctor,$curren
     	      echo $appointment['last_name_patient'];?></td>
     <td><a href="appointmentDetails.php?patient_id=<?=$appointment['patient_id']?>&app_id=<?=$appointment['id']?>" title="See details"><i class="fa fa-external-link-square" aria-hidden="true"></i></a></td>
   </tr>
-   <?php }; ?>
+   <?php }} ?>
   </table>
    <a href="#" onclick="openPopUp('wad-newappointment-popup')" ><input type="submit" name="addApp" class="button-submit-pat-new" value="Add New Appointment"></a>
   </div>
